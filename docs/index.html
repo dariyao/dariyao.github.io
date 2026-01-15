@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dariya Ostrovska</title>
-  <meta name="description" content="Dariya Ostrovska — Data Analyst, former editor, music person. Based in Toronto." />
+  <meta name="description" content="Dariya Ostrovska — Data Analyst" />
   <meta name="theme-color" content="#faf9f7" />
   
   <link rel="icon" type="image/png" href="assets/me.png" sizes="32x32" />
@@ -294,7 +294,7 @@
 
     .project-card-media {
       width: 100%;
-      aspect-ratio: 16 / 9;
+      aspect-ratio: 1.544;
       background: #f0f0f0;
       border-bottom: 1px solid rgba(0, 0, 0, 0.05);
       position: relative;
@@ -306,7 +306,7 @@
     .project-card-media img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
       background: #f5f5f5;
     }
 
@@ -624,6 +624,12 @@
       margin-bottom: 0.35rem;
     }
 
+    .modal-video {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+    }
+
 
     .dashboard-grid {
       display: grid;
@@ -815,13 +821,13 @@
               <video autoplay muted loop playsinline poster="dashboard_screens/sales_overview.png"></video>
             </div>
             <div class="project-card-content">
-              <h3>Northwind Traders</h3>
+              <h3>Northwind Traders Dashboard</h3>
               <p>End-to-end dimensional data warehouse with executive dashboards.</p>
               <div class="project-chips">
                 <span class="chip">BigQuery</span>
                 <span class="chip">dbt</span>
                 <span class="chip">Tableau</span>
-                <span class="chip">Kimball</span>
+                <span class="chip">Kimball Modelling</span>
               </div>
             </div>
           </div>
@@ -833,7 +839,7 @@
             </div>
             <div class="project-card-content">
               <h3>Coffee Sales Dashboard</h3>
-              <p>Interactive Excel dashboard with slicers, timelines, and pivot tables.</p>
+              <p>Interactive Excel dashboard using slicers, pivot tables, and IF functions.</p>
               <div class="project-chips">
                 <span class="chip">Excel</span>
                 <span class="chip">XLOOKUP</span>
@@ -979,6 +985,12 @@
         <span class="chip">Kimball Methodology</span>
       </div>
 
+      <div class="modal-section">
+        <h3>Dashboard Preview</h3>
+        <video class="modal-video" controls autoplay muted loop>
+          <source src="assets/northwind-preview.mp4" type="video/mp4">
+        </video>
+      </div>
 
       <div class="modal-section">
         <h3>The Problem</h3>
@@ -988,13 +1000,13 @@
 
       <div class="modal-section">
         <h3>What I Built</h3>
-        <p>As part of an Analytics Engineering Bootcamp, I rebuilt the classic Northwind OLTP into an analytics-ready warehouse in BigQuery and took things further by building self-initiated executive dashboards in Tableau.</p>
+        <p>As part of an Analytics Engineering Bootcamp, I rebuilt the Northwind OLTP into an analytics-ready warehouse in BigQuery and took things further by building self-initiated executive dashboards in Tableau.</p>
         <ul>
-          <li>Kimball bus matrix with 4 conformed dimensions (customer, employee, product, date) and 3 fact tables</li>
-          <li>4-layer architecture: Data Lake → Staging → DWH → OBT in BigQuery</li>
-          <li>dbt transformations with Jinja macros and incremental models</li>
-          <li>Data quality tests: not_null, unique, relationships</li>
-          <li>Performance optimization with partitioning and clustering</li>
+          <li>Kimball bus matrix with 4 conformed dimensions (customer, employee, product, date) and 3 fact tables.</li>
+          <li>4-layer architecture: Data Lake → Staging → DWH → OBT in BigQuery.</li>
+          <li>dbt transformations with Jinja macros and incremental models.</li>
+          <li>Data quality tests: not_null, unique, relationship.</li>
+          <li>Performance optimization with partitioning and clustering.</li>
         </ul>
       </div>
 
@@ -1060,10 +1072,16 @@
         <span class="chip">Data Cleaning</span>
       </div>
 
+      <div class="modal-section">
+        <h3>Dashboard Preview</h3>
+        <video class="modal-video" controls autoplay muted loop>
+          <source src="assets/coffee-preview.mp4" type="video/mp4">
+        </video>
+      </div>
 
       <div class="modal-section">
-        <h3>The Challenge</h3>
-        <p>Transform raw coffee sales data into an interactive dashboard that reveals trends, performance metrics, and customer behavior at a glance.</p>
+        <h3>The Problem</h3>
+        <p>Transform raw coffee sales data into an interactive dashboard that reveals trends and performance metrics at a glance.</p>
       </div>
 
 
@@ -1071,24 +1089,22 @@
         <h3>What I Built</h3>
         <p>A comprehensive Excel dashboard combining advanced formula engineering with interactive controls.</p>
         <ul>
-          <li>Dynamic lookups using XLOOKUP and Index-Match formulas for flexible data retrieval</li>
-          <li>Complex sales calculations with multiplication formulas and nested IF functions for multi-criteria logic</li>
-          <li>Complete data pipeline: duplicate detection, type conversion, table normalization, and validation</li>
-          <li>Pivot tables for dimensional analysis with timeline and slicer controls for real-time exploration</li>
-          <li>Professional formatting with date and number standards, conditional formatting, and visual hierarchy</li>
+          <li>Dynamic lookups using XLOOKUP and Index-Match formulas for flexible data retrieval.</li>
+          <li>Sales calculations with multiplication formulas and nested IF functions for multi-criteria logic.</li>
+          <li>Pivot tables for dimensional analysis with timeline and slicer controls for real-time exploration.</li>
+          <li>Careful formatting with date and number standards, conditional formatting, and visual hierarchies.</li>
         </ul>
       </div>
 
 
       <div class="modal-section">
         <h3>Result</h3>
-        <p>An analytics-ready dashboard that demonstrates proficiency with Excel's advanced features and showcases the ability to build end-to-end data solutions—from cleaning and transformation through visualization and interactivity.</p>
+        <p>An analytics-ready dashboard that demonstrates proficiency with Excel's features with special attention paid to visualization..</p>
       </div>
 
 
       <div class="modal-links">
         <a href="assets/coffeeOrdersData.xlsx" download>Download Excel</a>
-        <a href="https://github.com/dariyao/dariyao.github.io/raw/main/docs/assets/coffeeOrdersData.xlsx" target="_blank" class="secondary">View on GitHub</a>
       </div>
     </div>
   </div>
@@ -1166,11 +1182,6 @@
       if (e.key === 'Escape') closeModal();
     });
 
-
-    // Autoplay videos on page
-    document.querySelectorAll('.project-card-media video').forEach(video => {
-      video.src = video.dataset.src || (video.closest('.project-card:nth-child(1)') ? 'assets/northwind-preview.mp4' : 'assets/coffee-preview.mp4');
-    });
 
     // Set video sources
     document.querySelector('.project-card:nth-child(1) video').src = 'assets/northwind-preview.mp4';
