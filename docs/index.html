@@ -237,8 +237,18 @@
       box-shadow: 0 4px 20px var(--shadow);
       cursor: pointer;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
-      margin-top: 2rem;
       max-width: 500px;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .projects-grid .project-card {
+      max-width: none;
     }
 
     .project-card:hover {
@@ -246,11 +256,21 @@
       box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
     }
 
-    .project-card-image {
+    .project-card-media {
       width: 100%;
-      height: 200px;
-      object-fit: cover;
+      aspect-ratio: 16 / 9;
+      background: #f0f0f0;
       border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card-media video,
+    .project-card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #f5f5f5;
     }
 
     .project-card-content {
@@ -670,7 +690,7 @@
               <a href="https://github.com/dariyao" target="_blank">GitHub</a>
               <a href="https://public.tableau.com/app/profile/dariya.ostrovska/vizzes" target="_blank">Tableau</a>
               <a href="assets/Dariya_Ostrovska_Resume.pdf" download>Resume</a>
-              <a href="mailto:dariyaostrovska@gmail.com">Email</a>
+              <a href="/cdn-cgi/l/email-protection#325653405b4b535d4146405d4441595372555f535b5e1c515d5f">Email</a>
             </div>
           </div>
           <div class="home-photo">
@@ -684,18 +704,38 @@
         <h2>Projects</h2>
         <p class="subtitle">Portfolio projects. More coming soon.</p>
         
-        <div class="project-card" onclick="openModal()">
-          <img src="dashboard_screens/sales_overview.png" alt="Northwind Traders Dashboard" class="project-card-image" />
-          <div class="project-card-content">
-            <h3>Northwind Traders</h3>
-            <p>End-to-end dimensional data warehouse with executive dashboards</p>
-            <div class="project-chips">
-              <span class="chip">BigQuery</span>
-              <span class="chip">dbt</span>
-              <span class="chip">Tableau</span>
-              <span class="chip">Kimball</span>
+        <div class="projects-grid">
+          <div class="project-card" onclick="openModal()">
+            <div class="project-card-media">
+              <video src="assets/northwind-preview.mp4" muted loop playsinline poster="dashboard_screens/sales_overview.png"></video>
+            </div>
+            <div class="project-card-content">
+              <h3>Northwind Traders</h3>
+              <p>End-to-end dimensional data warehouse with executive dashboards</p>
+              <div class="project-chips">
+                <span class="chip">BigQuery</span>
+                <span class="chip">dbt</span>
+                <span class="chip">Tableau</span>
+                <span class="chip">Kimball</span>
+              </div>
             </div>
           </div>
+
+          <a href="assets/coffeeOrdersData.xlsx" download class="project-card" style="text-decoration: none; color: inherit;">
+            <div class="project-card-media">
+              <video src="assets/coffee-preview.mp4" muted loop playsinline poster="assets/coffee-dashboard.png"></video>
+            </div>
+            <div class="project-card-content">
+              <h3>Coffee Sales Dashboard</h3>
+              <p>Interactive Excel dashboard with slicers, timelines, and pivot tables</p>
+              <div class="project-chips">
+                <span class="chip">Excel</span>
+                <span class="chip">XLOOKUP</span>
+                <span class="chip">Pivot Tables</span>
+                <span class="chip">Data Cleaning</span>
+              </div>
+            </div>
+          </a>
         </div>
       </section>
 
@@ -776,7 +816,7 @@
         <div class="contact-row">
           <div class="contact-item">
             <span class="contact-label">Email</span>
-            <a href="mailto:dariyaostrovska@gmail.com" class="contact-value">dariyaostrovska@gmail.com</a>
+            <a href="/cdn-cgi/l/email-protection#3e5a5f4c57475f514d4a4c51484d555f7e59535f5752105d5153" class="contact-value"><span class="__cf_email__" data-cfemail="492d283b203028263a3d3b263f3a2228092e24282025672a2624">[email&#160;protected]</span></a>
           </div>
           <div class="contact-item">
             <span class="contact-label">LinkedIn</span>
@@ -878,7 +918,7 @@
     </div>
   </div>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // Navigation
     const navLinks = document.querySelectorAll('.nav-link');
     const pages = document.querySelectorAll('.page');
@@ -931,9 +971,24 @@
       document.body.style.overflow = '';
     }
 
-    // Close on Escape
+    // Close modal on escape key
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closeModal();
+    });
+
+    // Video hover-to-play
+    document.querySelectorAll('.project-card').forEach(card => {
+      const video = card.querySelector('video');
+      if (video) {
+        card.addEventListener('mouseenter', () => {
+          video.currentTime = 0;
+          video.play();
+        });
+        card.addEventListener('mouseleave', () => {
+          video.pause();
+          video.currentTime = 0;
+        });
+      }
     });
   </script>
 </body>
