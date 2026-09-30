@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Profile Writing | Dariya Ostrovska</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&amp;family=Hanken+Grotesk:wght@300..700&amp;display=swap">
+<script src="./site.js"></script>
+<style>
+@media (prefers-reduced-motion: no-preference){@view-transition{navigation:auto}}
+::view-transition-old(root){animation:vtout .45s ease both}
+::view-transition-new(root){animation:vtin .8s cubic-bezier(.16,1,.3,1) both}
+::view-transition-group(*){animation-duration:.85s;animation-timing-function:cubic-bezier(.16,1,.3,1)}
+@keyframes vtout{to{opacity:0}}
+@keyframes vtin{from{opacity:0;transform:translateY(12px)}}
+@media (prefers-reduced-motion: reduce){::view-transition-old(root),::view-transition-new(root){animation:none}html{scroll-behavior:auto}}
+html{scroll-behavior:smooth}
+body{margin:0;background:#F3EFE6;color:#221E18;-webkit-font-smoothing:antialiased;font-family:'Hanken Grotesk',system-ui,sans-serif}
+a{color:inherit;text-decoration-thickness:1px;text-underline-offset:4px}
+a:hover{color:inherit}
+::selection{background:#E5D3B0;color:#221E18}
+:focus-visible{outline:2px solid #8A6A3A;outline-offset:3px;border-radius:4px}
+</style>
+</helmet>
+
+<header data-site-header="" style="position:fixed; top:0; left:0; right:0; z-index:100; view-transition-name:site-header; color:#18241B; transition:background .5s, color .5s, box-shadow .5s;">
+  <a href="#main" style="position:absolute; left:-9999px; top:8px; padding:12px 16px; border-radius:6px; background:#18241B; color:#F1F2EC; font:600 13px/1 'Hanken Grotesk', sans-serif; z-index:2;" style-focus="left:12px;">Skip to content</a>
+  <div style="max-width:1480px; margin:0 auto; padding:4px clamp(18px,4vw,52px); display:flex; align-items:center; justify-content:space-between; gap:0 28px; flex-wrap:wrap;">
+    <a href="index.html" style="font:italic 500 23px/1 'Cormorant', serif; text-decoration:none; white-space:nowrap; padding:12px 0;">Dariya Ostrovska</a>
+    <nav aria-label="Main" style="display:flex; align-items:center; gap:clamp(16px,2.6vw,34px); font:500 14px/1 'Hanken Grotesk', sans-serif; letter-spacing:0.02em;">
+      <a href="index.html#work" style="text-decoration:none; text-underline-offset:7px; text-decoration-thickness:1px; padding:14px 0; white-space:nowrap; transition:opacity .3s;" style-hover="opacity:.65;">Work</a>
+      <a href="music.html" aria-current="page" style="text-decoration:underline; text-underline-offset:7px; text-decoration-thickness:1px; padding:14px 0; white-space:nowrap; transition:opacity .3s;" style-hover="opacity:.65;">Writing</a>
+      <a href="about.html" style="text-decoration:none; text-underline-offset:7px; text-decoration-thickness:1px; padding:14px 0; white-space:nowrap; transition:opacity .3s;" style-hover="opacity:.65;">About</a>
+      <a href="about.html#contact" style="text-decoration:none; text-underline-offset:7px; text-decoration-thickness:1px; padding:14px 0; white-space:nowrap; transition:opacity .3s;" style-hover="opacity:.65;">Contact</a>
+      <a href="about.html#resume" style="display:inline-flex; align-items:center; min-height:36px; padding:0 14px; border-radius:999px; border:1px solid currentColor; text-decoration:none; white-space:nowrap; transition:background .3s, color .3s;" style-hover="background:rgba(127,140,120,0.18);">Résumé</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<section data-tone="light" data-screen-label="Profiles opener" style="position:relative; overflow:hidden;">
+  <div data-speed="-0.15" aria-hidden="true" style="position:absolute; left:0; right:0; top:0; height:90vh; pointer-events:none; -webkit-mask-image:linear-gradient(180deg,#000 30%,transparent); mask-image:linear-gradient(180deg,#000 30%,transparent);">
+    <img src="images/mist.jpg" alt="" style="width:100%; height:100%; object-fit:cover; object-position:70% 40%; opacity:.6; filter:sepia(.2);">
+  </div>
+  <div style="position:relative; max-width:1080px; margin:0 auto; padding:clamp(180px,24vh,260px) clamp(18px,4vw,52px) clamp(90px,12vw,160px); display:flex; flex-direction:column; gap:28px;">
+    <nav aria-label="Writing" data-reveal="" style="display:flex; gap:22px; flex-wrap:wrap; font:500 14px/1 'Hanken Grotesk', sans-serif;">
+        <a href="music.html" style="padding:10px 0; text-decoration:none; border-bottom:1px solid transparent; color:#6B5F4E; transition:color .3s;" style-hover="color:#221E18;">Music journalism</a>
+        <a href="profiles.html" aria-current="page" style="padding:10px 0; text-decoration:none; border-bottom:1px solid #221E18; color:#221E18; transition:color .3s;" style-hover="color:#221E18;">Profile writing</a>
+      </nav>
+    <p data-reveal="" style="margin:0; font:600 11px/1 'Hanken Grotesk', sans-serif; letter-spacing:0.2em; text-transform:uppercase; color:#8A6A3A;">Profile writing · VIDA Select</p>
+    <h1 data-reveal="" data-d="100" style="margin:0; font:italic 300 clamp(56px,8.4vw,136px)/0.92 'Cormorant', serif; letter-spacing:-0.035em;">Other people, <span style="font-style:normal;">on paper</span></h1>
+    <div data-reveal="" data-d="200" style="display:flex; flex-direction:column; gap:18px; font:400 20px/1.7 'Hanken Grotesk', sans-serif; max-width:34em; text-wrap:pretty; color:#3B342A;">
+      <p style="margin:0;">At VIDA Select I wrote persuasive, personality-driven profiles for premium clients. Later I moved into editorial leadership, editing other writers’ profiles.</p>
+      <p style="margin:0;">The clients are real people and the work is confidential, so what’s below is anonymised.</p>
+    </div>
+  </div>
+</section>
+
+<section data-tone="light" data-screen-label="Excerpts" style="position:relative;">
+  <div style="max-width:1080px; margin:0 auto; padding:0 clamp(18px,4vw,52px) clamp(100px,14vw,200px); display:flex; flex-direction:column; gap:clamp(64px,9vw,120px);">
+    <sc-for list="{{ slots }}" as="s" hint-placeholder-count="3">
+      <figure data-reveal="" style="margin:0; display:grid; grid-template-columns:minmax(0,90px) minmax(0,1fr); gap:clamp(16px,3vw,40px); align-items:start; margin-left:{{ s.indent }};">
+        <span aria-hidden="true" style="font:300 110px/0.7 'Cormorant', serif; color:#C9B38A;">“</span>
+        <div style="display:flex; flex-direction:column; gap:16px;">
+          <div style="min-height:140px; display:flex; flex-direction:column; gap:14px; justify-content:center; padding:10px 0; border-bottom:1px solid rgba(34,30,24,0.18);">
+            <span style="display:block; height:1px; background:rgba(34,30,24,0.14);"></span>
+            <span style="display:block; height:1px; background:rgba(34,30,24,0.14); width:86%;"></span>
+            <span style="display:block; height:1px; background:rgba(34,30,24,0.14); width:64%;"></span>
+          </div>
+          <figcaption style="display:flex; gap:12px; flex-wrap:wrap; align-items:center; font:500 13px/1.5 'Hanken Grotesk', sans-serif; color:#6B5F4E;"><span>{{ s.cap }}</span><span style="font:600 10px/1 'Hanken Grotesk', sans-serif; letter-spacing:0.12em; text-transform:uppercase; color:#8A6A3A; border:1px dashed #8A6A3A; border-radius:999px; padding:5px 9px;">Add approved excerpt</span></figcaption>
+        </div>
+      </figure>
+    </sc-for>
+    <p data-reveal="" style="margin:0; font:italic 300 clamp(26px,2.6vw,38px)/1.25 'Cormorant', serif; max-width:26ch;">Full samples on request, with the client’s permission.</p>
+  </div>
+</section>
+
+<section data-tone="light" data-screen-label="Profiles next" style="border-top:1px solid rgba(34,30,24,0.14);">
+  <div style="max-width:1480px; margin:0 auto; padding:clamp(60px,8vw,110px) clamp(18px,4vw,52px); display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap;">
+    <a href="music.html" style="display:flex; flex-direction:column; gap:10px; text-decoration:none;"><span style="font:600 11px/1 'Hanken Grotesk', sans-serif; letter-spacing:0.2em; text-transform:uppercase; color:#8A6A3A;">Previous</span><span style="font:italic 300 clamp(30px,3.4vw,52px)/1 'Cormorant', serif;">← Music journalism</span></a>
+    <a href="about.html" style="display:flex; flex-direction:column; gap:10px; text-align:right; text-decoration:none;"><span style="font:600 11px/1 'Hanken Grotesk', sans-serif; letter-spacing:0.2em; text-transform:uppercase; color:#8A6A3A;">Next</span><span style="font:italic 300 clamp(30px,3.4vw,52px)/1 'Cormorant', serif;">About →</span></a>
+  </div>
+</section>
+</main>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    const go = () => { this.off = window.Site.init(); };
+    if (window.Site) go(); else this.iv = setInterval(() => { if (window.Site) { clearInterval(this.iv); go(); } }, 40);
+  }
+  componentWillUnmount() { clearInterval(this.iv); this.off && this.off(); }
+  renderVals() {
+    return { slots: [
+      { cap: 'Opening lines of a client profile', indent: '0px' },
+      { cap: 'A draft I edited, before and after', indent: 'clamp(0px,8vw,120px)' },
+      { cap: 'A line I’m still pleased with', indent: '0px' },
+    ] };
+  }
+}
+</script>
+</body>
+</html>

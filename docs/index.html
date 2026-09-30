@@ -1,1191 +1,187 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dariya Ostrovska</title>
-  <meta name="description" content="Dariya Ostrovska — Data Analyst" />
-  <meta name="theme-color" content="#faf9f7" />
-  
-  <link rel="icon" type="image/png" href="assets/me.png" sizes="32x32" />
-  <link rel="apple-touch-icon" href="assets/me.png" />
-  
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&display=swap" rel="stylesheet">
-
-
-  <style>
-    :root {
-      --bg: #faf9f7;
-      --ink: #1a1a1a;
-      --muted: #6b6b6b;
-      --subtle: #a3a3a3;
-      --glass: rgba(255, 255, 255, 0.72);
-      --glass-border: rgba(255, 255, 255, 0.4);
-      --shadow: rgba(0, 0, 0, 0.06);
-    }
-
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-
-    body {
-      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--bg);
-      color: var(--ink);
-      line-height: 1.6;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
-
-
-    /* Navigation */
-    nav {
-      position: fixed;
-      top: 1.25rem;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 100;
-      display: flex;
-      gap: 0.25rem;
-      padding: 0.4rem;
-      background: var(--glass);
-      backdrop-filter: blur(20px) saturate(180%);
-      -webkit-backdrop-filter: blur(20px) saturate(180%);
-      border-radius: 100px;
-      border: 1px solid var(--glass-border);
-      box-shadow: 0 4px 24px var(--shadow), 0 1px 2px var(--shadow);
-    }
-
-
-    nav a {
-      padding: 0.6rem 1.1rem;
-      border-radius: 100px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: var(--ink);
-      text-decoration: none;
-      transition: all 0.2s ease;
-    }
-
-
-    nav a:hover {
-      background: rgba(0, 0, 0, 0.04);
-    }
-
-
-    nav a.active {
-      background: var(--ink);
-      color: var(--bg);
-    }
-
-
-    /* Main content area */
-    main {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      z-index: 1;
-    }
-
-
-    /* Content wrapper */
-    .content {
-      flex: 1;
-      padding: 7rem 2rem 2rem;
-      max-width: 1000px;
-      margin: 0 auto;
-      width: 100%;
-    }
-
-
-    /* Page sections */
-    .page {
-      display: none;
-      opacity: 0;
-      transform: translateY(8px);
-      transition: opacity 0.3s ease, transform 0.3s ease;
-    }
-
-
-    .page.active {
-      display: block;
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-
-    /* Home layout with photo */
-    .home-layout {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2rem;
-      align-items: center;
-    }
-
-
-    @media (min-width: 768px) {
-      .home-layout {
-        grid-template-columns: 1fr auto;
-        gap: 3rem;
-      }
-    }
-
-
-    .home-text {
-      order: 2;
-    }
-
-
-    @media (min-width: 768px) {
-      .home-text {
-        order: 1;
-      }
-    }
-
-
-    .home-photo {
-      order: 1;
-      display: flex;
-      justify-content: center;
-    }
-
-
-    @media (min-width: 768px) {
-      .home-photo {
-        order: 2;
-      }
-    }
-
-
-    .profile-image {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      object-fit: cover;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-    }
-
-
-    @media (min-width: 768px) {
-      .profile-image {
-        width: 220px;
-        height: 220px;
-      }
-    }
-
-
-    /* Typography */
-    h1 {
-      font-family: 'Instrument Serif', Georgia, serif;
-      font-size: clamp(2.5rem, 7vw, 4.5rem);
-      font-weight: 400;
-      line-height: 1.05;
-      letter-spacing: -0.02em;
-      margin-bottom: 1.25rem;
-    }
-
-
-    h1 em {
-      font-style: italic;
-    }
-
-
-    h2 {
-      font-family: 'Instrument Serif', Georgia, serif;
-      font-size: 1.75rem;
-      font-weight: 400;
-      margin-bottom: 1rem;
-    }
-
-
-    .subtitle {
-      font-size: 1.05rem;
-      color: var(--muted);
-      max-width: 480px;
-      margin-bottom: 1.5rem;
-      line-height: 1.65;
-    }
-
-
-    .role {
-      display: inline-block;
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: var(--muted);
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      margin-bottom: 0.75rem;
-    }
-
-
-    /* Links */
-    .links {
-      display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-      margin-top: 1.5rem;
-    }
-
-
-    .links a {
-      color: var(--ink);
-      text-decoration: none;
-      font-size: 0.95rem;
-      padding-bottom: 2px;
-      border-bottom: 1px solid var(--subtle);
-      transition: border-color 0.2s ease;
-    }
-
-
-    .links a:hover {
-      border-color: var(--ink);
-    }
-
-
-    /* Project card */
-    .project-card {
-      background: white;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 4px 20px var(--shadow);
-      cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      max-width: 500px;
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-    }
-
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-
-    .projects-grid .project-card {
-      max-width: none;
-    }
-
-
-    .project-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-    }
-
-
-    .project-card-media {
-      width: 100%;
-      aspect-ratio: 1.544;
-      background: #f0f0f0;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-      position: relative;
-      overflow: hidden;
-    }
-
-
-    .project-card-media video,
-    .project-card-media img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      background: #f5f5f5;
-    }
-
-
-    .project-card-content {
-      padding: 1.25rem;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
-
-
-    .project-card h3 {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 1.15rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-
-
-    .project-card p {
-      font-size: 0.9rem;
-      color: var(--muted);
-      margin-bottom: 0.75rem;
-      flex: 1;
-    }
-
-
-    .project-chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-    }
-
-
-    .chip {
-      font-size: 0.75rem;
-      font-weight: 500;
-      padding: 0.3rem 0.6rem;
-      border-radius: 100px;
-      background: rgba(0, 0, 0, 0.05);
-      color: var(--muted);
-    }
-
-
-    /* Writing grid */
-    .writing-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1.25rem;
-      margin-top: 2rem;
-    }
-
-
-    .writing-card {
-      display: block;
-      text-decoration: none;
-      color: var(--ink);
-      background: white;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 2px 12px var(--shadow);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-
-    .writing-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-    }
-
-
-    .writing-card-image {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-    }
-
-
-    .writing-card-content {
-      padding: 1rem;
-    }
-
-
-    .writing-card h3 {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.95rem;
-      font-weight: 600;
-      margin-bottom: 0.25rem;
-      line-height: 1.3;
-    }
-
-
-    .writing-card .type {
-      font-size: 0.8rem;
-      color: var(--subtle);
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-    }
-
-
-    /* About section */
-    .about-content {
-      max-width: 580px;
-    }
-
-
-    .about-content p {
-      margin-bottom: 1.25rem;
-      color: var(--ink);
-      line-height: 1.7;
-    }
-
-
-    /* Contact links */
-    .contact-row {
-      display: flex;
-      gap: 2rem;
-      flex-wrap: wrap;
-      margin-top: 2rem;
-      padding-top: 2rem;
-      border-top: 1px solid rgba(0, 0, 0, 0.08);
-    }
-
-
-    .contact-item {
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
-    }
-
-
-    .contact-label {
-      font-size: 0.8rem;
-      color: var(--subtle);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-
-    .contact-value {
-      color: var(--ink);
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 0.95rem;
-      transition: opacity 0.2s;
-    }
-
-
-    a.contact-value:hover {
-      opacity: 0.6;
-    }
-
-
-    /* Alaska photo footer */
-    .photo-footer {
-      width: 100%;
-      height: 35vh;
-      min-height: 250px;
-      position: relative;
-      overflow: hidden;
-      margin-top: auto;
-    }
-
-
-    .photo-footer::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 120px;
-      background: linear-gradient(to bottom, var(--bg) 0%, transparent 100%);
-      z-index: 2;
-      pointer-events: none;
-    }
-
-
-    .photo-footer img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 30%;
-    }
-
-
-    /* Modal */
-    .modal-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(4px);
-      z-index: 200;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.3s ease, visibility 0.3s ease;
-    }
-
-
-    .modal-overlay.visible {
-      opacity: 1;
-      visibility: visible;
-    }
-
-
-    .modal {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) scale(0.95);
-      background: var(--bg);
-      border-radius: 20px;
-      max-width: 900px;
-      width: 90%;
-      max-height: 85vh;
-      overflow-y: auto;
-      z-index: 201;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
-    }
-
-
-    .modal.visible {
-      opacity: 1;
-      visibility: visible;
-      transform: translate(-50%, -50%) scale(1);
-    }
-
-
-    .modal-close {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      border: none;
-      background: rgba(0, 0, 0, 0.08);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.2s;
-      z-index: 10;
-    }
-
-
-    .modal-close:hover {
-      background: rgba(0, 0, 0, 0.15);
-    }
-
-
-    .modal-close svg {
-      width: 18px;
-      height: 18px;
-    }
-
-
-    .modal-content {
-      padding: 2rem;
-    }
-
-
-    .modal h2 {
-      font-family: 'Instrument Serif', Georgia, serif;
-      font-size: 1.75rem;
-      margin-bottom: 0.5rem;
-    }
-
-
-    .modal-subtitle {
-      color: var(--muted);
-      font-size: 1rem;
-      margin-bottom: 1.5rem;
-    }
-
-
-    .modal-chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 1.5rem;
-    }
-
-
-    .modal-section {
-      margin-bottom: 1.5rem;
-    }
-
-
-    .modal-section h3 {
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-      color: var(--ink);
-    }
-
-
-    .modal-section p,
-    .modal-section li {
-      color: var(--muted);
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-
-
-    .modal-section ul {
-      padding-left: 1.25rem;
-      margin-top: 0.5rem;
-    }
-
-
-    .modal-section li {
-      margin-bottom: 0.35rem;
-    }
-
-    .modal-video {
-      width: 100%;
-      border-radius: 12px;
-      margin-bottom: 1.5rem;
-    }
-
-
-    .dashboard-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-
-
-    .dashboard-item {
-      background: white;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 2px 12px var(--shadow);
-    }
-
-
-    .dashboard-item img {
-      width: 100%;
-      height: 140px;
-      object-fit: cover;
-    }
-
-
-    .dashboard-item-content {
-      padding: 0.75rem;
-    }
-
-
-    .dashboard-item h4 {
-      font-size: 0.9rem;
-      font-weight: 600;
-      margin-bottom: 0.25rem;
-    }
-
-
-    .dashboard-item p {
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
-
-
-    .modal-links {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin-top: 1.5rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid rgba(0, 0, 0, 0.08);
-    }
-
-
-    .modal-links a {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.6rem 1rem;
-      border-radius: 100px;
-      background: var(--ink);
-      color: var(--bg);
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 500;
-      transition: opacity 0.2s;
-    }
-
-
-    .modal-links a:hover {
-      opacity: 0.85;
-    }
-
-
-    .modal-links a.secondary {
-      background: rgba(0, 0, 0, 0.08);
-      color: var(--ink);
-    }
-
-
-    /* Mobile */
-    @media (max-width: 640px) {
-      nav {
-        top: 1rem;
-        padding: 0.3rem;
-        gap: 0.15rem;
-      }
-
-
-      nav a {
-        padding: 0.5rem 0.8rem;
-        font-size: 0.85rem;
-      }
-
-
-      .content {
-        padding: 6rem 1.25rem 1.5rem;
-      }
-
-
-      h1 {
-        font-size: 2.5rem;
-      }
-
-
-      .photo-footer {
-        height: 30vh;
-        min-height: 200px;
-      }
-
-
-      .writing-grid {
-        grid-template-columns: 1fr;
-      }
-
-
-      .contact-row {
-        gap: 1.5rem;
-      }
-
-
-      .modal {
-        width: 95%;
-        max-height: 90vh;
-      }
-
-
-      .modal-content {
-        padding: 1.5rem;
-      }
-
-
-      .profile-image {
-        width: 150px;
-        height: 150px;
-      }
-
-      .projects-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+<title>Dariya Ostrovska | Work &amp; Writing</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
 </head>
 <body>
-  <!-- Navigation -->
-  <nav>
-    <a href="#home" class="nav-link active" data-page="home">Home</a>
-    <a href="#projects" class="nav-link" data-page="projects">Projects</a>
-    <a href="#writing" class="nav-link" data-page="writing">Writing</a>
-    <a href="#about" class="nav-link" data-page="about">About</a>
-  </nav>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&amp;family=Hanken+Grotesk:wght@300..700&amp;display=swap">
+<script src="./site.js"></script>
+<script src="./image-slot.js"></script>
+<style>
+@media (prefers-reduced-motion: no-preference){@view-transition{navigation:auto}}
+::view-transition-old(root){animation:vtout .35s ease both}
+::view-transition-new(root){animation:vtin .6s cubic-bezier(.16,1,.3,1) both}
+::view-transition-group(*){animation-duration:.7s;animation-timing-function:cubic-bezier(.16,1,.3,1)}
+@keyframes vtout{to{opacity:0}}
+@keyframes vtin{from{opacity:0;transform:translateY(8px)}}
+@media (prefers-reduced-motion: reduce){::view-transition-old(root),::view-transition-new(root),::view-transition-group(*){animation:none}html{scroll-behavior:auto}}
+html{scroll-behavior:smooth}
+body{margin:0;background:#F1F2EC;color:#18241B;-webkit-font-smoothing:antialiased;font-family:'Hanken Grotesk',system-ui,sans-serif}
+a{color:inherit;text-decoration-thickness:1px;text-underline-offset:4px}
+a:hover{color:inherit}
+::selection{background:#C9D98A;color:#18241B}
+:focus-visible{outline:2px solid #6E8F3A;outline-offset:3px;border-radius:4px}
+</style>
+</helmet>
 
+<header data-site-header="" style="position:fixed; top:0; left:0; right:0; z-index:100; view-transition-name:site-header; color:#F1F2EC; transition:background .5s, color .5s, box-shadow .5s;">
+  <a href="#main" style="position:absolute; left:-9999px; top:8px; padding:12px 16px; border-radius:6px; background:#18241B; color:#F1F2EC; font:600 13px/1 'Hanken Grotesk', sans-serif; z-index:2;" style-focus="left:12px;">Skip to content</a>
+  <div style="max-width:1480px; margin:0 auto; padding:4px clamp(18px,4vw,52px); display:flex; align-items:center; justify-content:space-between; gap:0 28px; flex-wrap:wrap;">
+    <a href="index.html" aria-current="page" style="font:italic 500 23px/1 'Cormorant', serif; text-decoration:none; white-space:nowrap; padding:12px 0;">Dariya Ostrovska</a>
+    <nav aria-label="Main" style="display:flex; align-items:center; gap:clamp(16px,2.6vw,34px); font:500 14px/1 'Hanken Grotesk', sans-serif; letter-spacing:0.02em;">
+      <a href="index.html#work" style="text-decoration:none; text-underline-offset:7px; text-decoration-thickness:1px; padding:14px 0; white-space:nowrap; transition:opacity .3s;" style-hover="opacity:.65;">Work</a>
+      <a href="music.html" style="text-decoration:none; text-underline-offset:7px; text-decoration-thickness:1px; padding:14px 0; white-space:nowrap; transition:opacity .3s;" style-hover="opacity:.65;">Writing</a>
+      <a href="about.html" style="text-decoration:none; text-underline-offset:7px; text-decoration-thickness:1px; padding:14px 0; white-space:nowrap; transition:opacity .3s;" style-hover="opacity:.65;">About</a>
+      <a href="about.html#contact" style="text-decoration:none; text-underline-offset:7px; text-decoration-thickness:1px; padding:14px 0; white-space:nowrap; transition:opacity .3s;" style-hover="opacity:.65;">Contact</a>
+      <a href="about.html#resume" style="display:inline-flex; align-items:center; min-height:36px; padding:0 14px; border-radius:999px; border:1px solid currentColor; text-decoration:none; white-space:nowrap; transition:background .3s, color .3s;" style-hover="background:rgba(127,140,120,0.18);">Résumé</a>
+    </nav>
+  </div>
+</header>
 
-  <main>
-    <div class="content">
-      <!-- Home -->
-      <section class="page active" id="home">
-        <div class="home-layout">
-          <div class="home-text">
-            <span class="role">Data Analyst · Toronto</span>
-            <h1>Hi, I'm <em>Dariya</em></h1>
-            <p class="subtitle">
-              My background is editorial, it's three years of pattern recognition, pulling out the story, and obsessing over details until everything clicks.
-            </p>
-            <p class="subtitle">
-              I apply the same thinking to data analytics and work primarily with SQL and Tableau. I like being both the translator and the architect, and I work best with teams who truly love what they do.
-            </p>
-            <div class="links">
-              <a href="https://www.linkedin.com/in/dariyaostrovska" target="_blank">LinkedIn</a>
-              <a href="https://github.com/dariyao" target="_blank">GitHub</a>
-              <a href="https://public.tableau.com/app/profile/dariya.ostrovska/vizzes" target="_blank">Tableau</a>
-              <a href="assets/Dariya_Ostrovska_Resume.pdf" download>Resume</a>
-              <a href="mailto:dariyaostrovska@gmail.com">Email</a>
-            </div>
-          </div>
-          <div class="home-photo">
-            <img src="assets/Dariya_Ostrovska.png" alt="Dariya Ostrovska" class="profile-image" />
-          </div>
-        </div>
-      </section>
-
-
-      <!-- Projects -->
-      <section class="page" id="projects">
-        <h2>Projects</h2>
-        <p class="subtitle">Portfolio projects. More coming soon.</p>
-        
-        <div class="projects-grid">
-          <div class="project-card" onclick="openModal('northwind')">
-            <div class="project-card-media">
-              <video autoplay muted loop playsinline poster="dashboard_screens/sales_overview.png"></video>
-            </div>
-            <div class="project-card-content">
-              <h3>Northwind Traders Dashboard</h3>
-              <p>End-to-end dimensional data warehouse with executive dashboards.</p>
-              <div class="project-chips">
-                <span class="chip">BigQuery</span>
-                <span class="chip">dbt</span>
-                <span class="chip">Tableau</span>
-                <span class="chip">Kimball Modelling</span>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="project-card" onclick="openModal('coffee')">
-            <div class="project-card-media">
-              <video autoplay muted loop playsinline poster="assets/coffee-dashboard.png"></video>
-            </div>
-            <div class="project-card-content">
-              <h3>Coffee Sales Dashboard</h3>
-              <p>Interactive Excel dashboard using slicers, pivot tables, and IF functions.</p>
-              <div class="project-chips">
-                <span class="chip">Excel</span>
-                <span class="chip">XLOOKUP</span>
-                <span class="chip">Pivot Tables</span>
-                <span class="chip">Data Cleaning</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-      <!-- Writing -->
-      <section class="page" id="writing">
-        <h2>Writing</h2>
-        <p class="subtitle">Music journalism and the occasional think-piece.</p>
-        
-        <div class="writing-grid">
-          <a href="https://spillmagazine.com/spill-feature-i-like-the-idea-of-being-included-in-a-part-of-something-more-than-making-myself-the-focal-point-a-conversation-with-justin-warfield-of-she-wants-revenge/" target="_blank" class="writing-card">
-            <img src="https://spillmagazine.com/wp-content/uploads/2022/06/Warfield-790x790.jpg" alt="Justin Warfield" class="writing-card-image" />
-            <div class="writing-card-content">
-              <span class="type">Feature</span>
-              <h3>A Conversation with Justin Warfield of She Wants Revenge</h3>
-            </div>
-          </a>
-
-
-          <a href="https://spillmagazine.com/spill-live-review-hurray-for-the-riff-raff-the-pink-room-yes-manchester/" target="_blank" class="writing-card">
-            <img src="https://spillmagazine.com/wp-content/uploads/2023/08/Hurray-For-The-Riff-Raff-790x790.jpg" alt="Hurray for the Riff Raff" class="writing-card-image" />
-            <div class="writing-card-content">
-              <span class="type">Live Review</span>
-              <h3>Hurray for the Riff Raff @ The Pink Room, Manchester</h3>
-            </div>
-          </a>
-
-
-          <a href="https://spillmagazine.com/spill-album-review-carla-dal-forno-come-around/" target="_blank" class="writing-card">
-            <img src="https://spillmagazine.com/wp-content/uploads/2023/01/Carla-dal-Forno-360x360.jpg" alt="Carla Dal Forno" class="writing-card-image" />
-            <div class="writing-card-content">
-              <span class="type">Album Review</span>
-              <h3>Carla Dal Forno — Come Around</h3>
-            </div>
-          </a>
-
-
-          <a href="https://spillmagazine.com/spill-album-review-pj-harvey-b-sides-demos-rarities/" target="_blank" class="writing-card">
-            <img src="https://spillmagazine.com/wp-content/uploads/2022/12/PJ-Harvey-360x360.jpg" alt="PJ Harvey" class="writing-card-image" />
-            <div class="writing-card-content">
-              <span class="type">Album Review</span>
-              <h3>PJ Harvey — B-Sides, Demos & Rarities</h3>
-            </div>
-          </a>
-
-
-          <a href="https://spillmagazine.com/spill-album-review-james-krivchenia-blood-karaoke/" target="_blank" class="writing-card">
-            <img src="https://spillmagazine.com/wp-content/uploads/2022/06/James-Krivchenia-360x360.jpg" alt="James Krivchenia" class="writing-card-image" />
-            <div class="writing-card-content">
-              <span class="type">Album Review</span>
-              <h3>James Krivchenia — Blood Karaoke</h3>
-            </div>
-          </a>
-
-
-          <a href="https://spillmagazine.com/spill-album-review-widowspeak-the-jacket/" target="_blank" class="writing-card">
-            <img src="https://spillmagazine.com/wp-content/uploads/2022/06/Widowspeak-360x360.jpg" alt="Widowspeak" class="writing-card-image" />
-            <div class="writing-card-content">
-              <span class="type">Album Review</span>
-              <h3>Widowspeak — The Jacket</h3>
-            </div>
-          </a>
-        </div>
-      </section>
-
-
-      <!-- About -->
-      <section class="page" id="about">
-        <h2>About</h2>
-        <div class="about-content">
-          <p>
-            I studied English Literature at Queen's which meant exhaustive analysis, close-reading, and pattern recognition. After that I worked as a Senior Editor and Team Lead at a matchmaking agency, getting a sense for each person's story and finding the common thread.
-          </p>
-          <p>
-            On the side I wrote about music. Artist interviews, album reviews, live concerts, the whole thing. I still believe most things can be made to sound better on paper.
-          </p>
-          <p>
-            Data is the counterpart to that. I loved the idea of a source of truth, something stable and tangible that can offer certainty even when things are at their messiest. I learned SQL, Tableau, and Kimball dimensional modelling to ensure I could build something end-to-end and understand how the whole system works, not just how to pull from it.
-          </p>
-          <p>
-            I care a lot about getting things right, always have.
-          </p>
-        </div>
-
-
-        <div class="contact-row">
-          <div class="contact-item">
-            <span class="contact-label">Email</span>
-            <a href="mailto:dariyaostrovska@gmail.com" class="contact-value">dariyaostrovska@gmail.com</a>
-          </div>
-          <div class="contact-item">
-            <span class="contact-label">LinkedIn</span>
-            <a href="https://www.linkedin.com/in/dariyaostrovska" target="_blank" class="contact-value">dariyaostrovska</a>
-          </div>
-          <div class="contact-item">
-            <span class="contact-label">GitHub</span>
-            <a href="https://github.com/dariyao" target="_blank" class="contact-value">dariyao</a>
-          </div>
-          <div class="contact-item">
-            <span class="contact-label">Location</span>
-            <span class="contact-value">Toronto, ON</span>
-          </div>
-        </div>
-      </section>
-    </div>
-
-
-    <!-- Alaska photo footer -->
-    <div class="photo-footer">
-      <img src="assets/Alaska.jpeg" alt="Mountains in Alaska" />
-    </div>
-  </main>
-
-
-  <!-- Project Modals -->
-  <div class="modal-overlay" id="modalOverlay" onclick="closeModal()"></div>
-  
-  <!-- Northwind Modal -->
-  <div class="modal" id="northwindModal">
-    <button class="modal-close" onclick="closeModal()" aria-label="Close">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M18 6L6 18M6 6l12 12"/>
-      </svg>
-    </button>
-    <div class="modal-content">
-      <h2>Northwind Traders</h2>
-      <p class="modal-subtitle">End-to-End Dimensional Data Warehouse for Analytics</p>
-      
-      <div class="modal-chips">
-        <span class="chip">SQL</span>
-        <span class="chip">BigQuery</span>
-        <span class="chip">dbt</span>
-        <span class="chip">Tableau</span>
-        <span class="chip">Dimensional Modelling</span>
-        <span class="chip">Kimball Methodology</span>
-      </div>
-
-      <div class="modal-section">
-        <h3>Dashboard Preview</h3>
-        <video class="modal-video" controls autoplay muted loop>
-          <source src="assets/northwind-preview.mp4" type="video/mp4">
-        </video>
-      </div>
-
-      <div class="modal-section">
-        <h3>The Problem</h3>
-        <p>Northwind Traders relied on a legacy on-prem MySQL database for both transactions and reporting, causing performance bottlenecks, slow reports, and limited scalability.</p>
-      </div>
-
-
-      <div class="modal-section">
-        <h3>What I Built</h3>
-        <p>As part of an Analytics Engineering Bootcamp, I rebuilt the Northwind OLTP into an analytics-ready warehouse in BigQuery and took things further by building self-initiated executive dashboards in Tableau.</p>
-        <ul>
-          <li>Kimball bus matrix with 4 conformed dimensions (customer, employee, product, date) and 3 fact tables.</li>
-          <li>4-layer architecture: Data Lake → Staging → DWH → OBT in BigQuery.</li>
-          <li>dbt transformations with Jinja macros and incremental models.</li>
-          <li>Data quality tests: not_null, unique, relationship.</li>
-          <li>Performance optimization with partitioning and clustering.</li>
-        </ul>
-      </div>
-
-
-      <div class="modal-section">
-        <h3>Dashboards</h3>
-        <div class="dashboard-grid">
-          <div class="dashboard-item">
-            <img src="dashboard_screens/sales_overview.png" alt="Sales Overview" />
-            <div class="dashboard-item-content">
-              <h4>Sales Overview</h4>
-              <p>KPIs, trends, agent performance, top products</p>
-            </div>
-          </div>
-          <div class="dashboard-item">
-            <img src="dashboard_screens/product_inventory.png" alt="Product Inventory" />
-            <div class="dashboard-item-content">
-              <h4>Product Inventory</h4>
-              <p>Stock health, coverage, reorder queue</p>
-            </div>
-          </div>
-          <div class="dashboard-item">
-            <img src="dashboard_screens/customer_overview.png" alt="Customer Overview" />
-            <div class="dashboard-item-content">
-              <h4>Customer Overview</h4>
-              <p>Order frequency, geo spread, employee breakdown</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="modal-section">
-        <h3>Result</h3>
-        <p>A production-ready warehouse with clean dimensional models, automated dbt transformations, and executive-friendly dashboards, allowing stakeholders to analyze sales performance, monitor inventory health, and understand customer behaviour.</p>
-      </div>
-
-
-      <div class="modal-links">
-        <a href="https://public.tableau.com/app/profile/dariya.ostrovska/vizzes" target="_blank">View Tableau</a>
-        <a href="https://github.com/dariyao/analytics-engineering-bootcamp" target="_blank" class="secondary">View Code</a>
-        <a href="https://github.com/dariyao/analytics-engineering-bootcamp/blob/main/docs/erd.png" target="_blank" class="secondary">ERD</a>
-      </div>
+<main id="main">
+<section data-tone="dark" data-screen-label="Home hero" style="position:relative; height:max(92svh,580px); overflow:hidden; background:#0C160F; color:#F1F2EC;">
+  <div data-speed="-0.25" style="position:absolute; inset:-6% 0;">
+    <img src="images/alaska-2560.jpg" alt="Cloud lifting off a mountain ridge above spruce forest" style="width:100%; height:100%; object-fit:cover; object-position:58% 42%; display:block; will-change:transform;">
+  </div>
+  <div aria-hidden="true" style="position:absolute; inset:0; background:linear-gradient(180deg,rgba(12,22,15,0.42) 0%,rgba(12,22,15,0) 24%,rgba(12,22,15,0) 50%,rgba(12,22,15,0.5) 80%,rgba(12,22,15,0.25) 100%);"></div>
+  <div aria-hidden="true" style="position:absolute; left:0; right:0; bottom:0; height:30vh; background:linear-gradient(180deg,rgba(241,242,236,0) 0%,rgba(241,242,236,0.18) 40%,rgba(241,242,236,0.7) 78%,#F1F2EC 100%);"></div>
+  <div style="position:relative; height:100%; max-width:1480px; margin:0 auto; padding:0 clamp(18px,4vw,52px) clamp(96px,17vh,170px); box-sizing:border-box; display:flex; flex-direction:column; justify-content:flex-end; gap:20px;">
+    <h1 data-reveal="" style="margin:0; font:300 clamp(56px,11vw,184px)/0.86 'Cormorant', serif; letter-spacing:-0.035em; text-shadow:0 2px 36px rgba(8,16,10,0.4);">Dariya <span style="font-style:italic; font-weight:400;">Ostrovska</span></h1>
+    <p data-reveal="" data-d="100" style="margin:0; font:400 clamp(18px,1.6vw,22px)/1.5 'Hanken Grotesk', sans-serif; max-width:34ch; text-shadow:0 1px 18px rgba(8,16,10,0.65);">I turn methodologies and operations data into tools and reports people can use. I also write profiles, reviews and interviews.</p>
+    <div data-reveal="" data-d="140" style="display:flex; gap:12px; flex-wrap:wrap;">
+      <a href="#work" style="display:inline-flex; align-items:center; gap:10px; min-height:44px; padding:0 20px; white-space:nowrap; border-radius:999px; background:#F1F2EC; color:#18241B; font:600 12px/1 'Hanken Grotesk', sans-serif; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; transition:transform .4s cubic-bezier(.16,1,.3,1), background .4s;" style-hover="transform:translateY(-2px); background:#fff; color:#18241B;" style-active="transform:scale(.97);">See the work <span aria-hidden="true">↓</span></a>
+      <a href="#writing" style="display:inline-flex; align-items:center; gap:10px; min-height:44px; padding:0 20px; white-space:nowrap; border-radius:999px; border:1px solid rgba(241,242,236,0.6); color:#F1F2EC; font:600 12px/1 'Hanken Grotesk', sans-serif; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; backdrop-filter:blur(8px); transition:transform .4s cubic-bezier(.16,1,.3,1), background .4s;" style-hover="transform:translateY(-2px); background:rgba(241,242,236,0.14); color:#F1F2EC;" style-active="transform:scale(.97);">Writing</a>
     </div>
   </div>
+</section>
 
-  <!-- Coffee Modal -->
-  <div class="modal" id="coffeeModal">
-    <button class="modal-close" onclick="closeModal()" aria-label="Close">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M18 6L6 18M6 6l12 12"/>
-      </svg>
-    </button>
-    <div class="modal-content">
-      <h2>Coffee Sales Dashboard</h2>
-      <p class="modal-subtitle">Interactive Excel Dashboard with Advanced Formulas</p>
-      
-      <div class="modal-chips">
-        <span class="chip">Excel</span>
-        <span class="chip">XLOOKUP</span>
-        <span class="chip">Index-Match</span>
-        <span class="chip">Pivot Tables</span>
-        <span class="chip">Data Cleaning</span>
+<section id="work" data-tone="light" data-screen-label="Work" style="position:relative; scroll-margin-top:60px;">
+  <div style="max-width:1480px; margin:0 auto; padding:clamp(40px,5vw,72px) clamp(18px,4vw,52px) clamp(80px,10vw,140px); display:flex; flex-direction:column; gap:clamp(80px,11vw,160px);">
+    <p data-reveal="" style="margin:0; font:600 11px/1 'Hanken Grotesk', sans-serif; letter-spacing:0.2em; text-transform:uppercase; color:#4B6B34;">Work</p>
+
+    <article style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr)); gap:clamp(32px,5vw,80px); align-items:center;">
+      <a href="sroi.html" aria-label="SROI forecasting calculator case study" style="position:relative; display:block; aspect-ratio:5/4; text-decoration:none;">
+        <div data-speed="-0.06" aria-hidden="true" style="position:absolute; inset:-4%; overflow:hidden; -webkit-mask-image:radial-gradient(ellipse 60% 58% at 50% 50%,#000 30%,transparent 100%); mask-image:radial-gradient(ellipse 60% 58% at 50% 50%,#000 30%,transparent 100%);">
+          <img src="images/forest.jpg" alt="" style="position:absolute; inset:-8% 0; width:100%; height:116%; object-fit:cover; object-position:50% 35%; view-transition-name:sroi-scene;">
+        </div>
+        <div style="position:absolute; left:12%; right:12%; top:20%; aspect-ratio:16/10; border-radius:8px; overflow:hidden; background:#E6EADF; box-shadow:0 40px 80px -30px rgba(12,22,15,0.6), 0 0 0 1px rgba(255,255,255,0.3); transition:transform .6s cubic-bezier(.16,1,.3,1);" style-hover="transform:translateY(-6px);">
+          <image-slot id="home-sroi" shape="rect" placeholder="Calculator screenshot" style="position:absolute; inset:0; width:100%; height:100%; color:#18241B;"></image-slot>
+        </div>
+      </a>
+      <div style="display:flex; flex-direction:column; gap:20px; max-width:560px;">
+        <p data-reveal="" style="margin:0; font:600 11px/1.5 'Hanken Grotesk', sans-serif; letter-spacing:0.18em; text-transform:uppercase; color:#4B6B34;">Forecasting tool · Methodology by Melek De-Wint</p>
+        <h2 data-reveal="" data-d="60" style="margin:0; font:300 clamp(40px,4.6vw,72px)/1 'Cormorant', serif; letter-spacing:-0.03em; text-wrap:balance;"><a href="sroi.html" style="text-decoration:none;" style-hover="text-decoration:underline;">SROI forecasting calculator</a></h2>
+        <p data-reveal="" data-d="100" style="margin:0; font:400 18px/1.65 'Hanken Grotesk', sans-serif; color:#3A493E; text-wrap:pretty;">An online calculator built on Melek De-Wint’s social return on investment methodology. I translated her method into a tool other people can use. What it produces is a forecast, not measured impact.</p>
+        <div data-reveal="" data-d="120" style="display:flex; align-items:center; gap:14px; font:400 14px/1.4 'Hanken Grotesk', sans-serif; color:#4E5E53;"><span aria-hidden="true" style="white-space:nowrap; flex-shrink:0; font:200 34px/1 'Hanken Grotesk', sans-serif; letter-spacing:-0.04em; color:#18241B;">_<span style="font:italic 300 1em/1 'Cormorant', serif; color:#6E8F3A;"> : </span>1</span><span>Estimated social value per dollar invested</span></div>
+        <a href="sroi.html" style="align-self:flex-start; display:inline-flex; align-items:center; gap:12px; min-height:44px; padding:0 22px; white-space:nowrap; border-radius:999px; background:#18241B; color:#F1F2EC; font:600 12px/1 'Hanken Grotesk', sans-serif; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; transition:transform .4s cubic-bezier(.16,1,.3,1), background .4s;" style-hover="transform:translateY(-2px); background:#3C5A2A; color:#F1F2EC;" style-active="transform:scale(.97);">Read the case study <span aria-hidden="true">→</span></a>
       </div>
+    </article>
 
-      <div class="modal-section">
-        <h3>Dashboard Preview</h3>
-        <video class="modal-video" controls autoplay muted loop>
-          <source src="assets/coffee-preview.mp4" type="video/mp4">
-        </video>
+    <article style="display:flex; flex-wrap:wrap-reverse; gap:clamp(32px,5vw,80px); align-items:center;">
+      <div style="flex:1 1 400px; display:flex; flex-direction:column; gap:20px; max-width:560px;">
+        <p data-reveal="" style="margin:0; font:600 11px/1.5 'Hanken Grotesk', sans-serif; letter-spacing:0.18em; text-transform:uppercase; color:#3F6E5A;">Data &amp; reporting</p>
+        <h2 data-reveal="" data-d="60" style="margin:0; font:600 clamp(34px,3.8vw,58px)/1 'Hanken Grotesk', sans-serif; letter-spacing:-0.045em; text-wrap:balance;"><a href="reporting.html" style="text-decoration:none;" style-hover="text-decoration:underline;">Reporting warehouse and dashboards</a></h2>
+        <p data-reveal="" data-d="100" style="margin:0; font:400 18px/1.65 'Hanken Grotesk', sans-serif; color:#3A493E; text-wrap:pretty;">Data investigation, a reporting warehouse and dashboards built on operations data, with written explanations so colleagues can understand what the numbers show.</p>
+        <a href="reporting.html" style="align-self:flex-start; display:inline-flex; align-items:center; gap:12px; min-height:44px; padding:0 22px; white-space:nowrap; border-radius:999px; background:#15201A; color:#EEF1EC; font:600 12px/1 'Hanken Grotesk', sans-serif; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; transition:transform .4s cubic-bezier(.16,1,.3,1), background .4s;" style-hover="transform:translateY(-2px); background:#3F6E5A; color:#EEF1EC;" style-active="transform:scale(.97);">Read the case study <span aria-hidden="true">→</span></a>
+        <a href="reporting.html#learning" style="align-self:flex-start; font:500 14px/1.4 'Hanken Grotesk', sans-serif; color:#4E5E53; padding:6px 0;">Also: Northwind and Excel learning projects →</a>
       </div>
+      <a href="reporting.html" aria-label="Reporting warehouse and dashboards case study" style="flex:1 1 460px; position:relative; display:block; aspect-ratio:5/4; text-decoration:none; color:#15201A;">
+        <div data-speed="-0.06" aria-hidden="true" style="position:absolute; inset:-4%; overflow:hidden; -webkit-mask-image:radial-gradient(ellipse 60% 58% at 50% 50%,#000 30%,transparent 100%); mask-image:radial-gradient(ellipse 60% 58% at 50% 50%,#000 30%,transparent 100%);">
+          <img src="images/valley.jpg" alt="" style="position:absolute; inset:-8% 0; width:100%; height:116%; object-fit:cover; object-position:50% 55%; view-transition-name:report-scene;">
+        </div>
+        <div style="position:absolute; left:14%; right:14%; top:22%; padding:clamp(16px,2vw,26px); border-radius:8px; background:rgba(238,241,236,0.92); backdrop-filter:blur(10px); box-shadow:0 40px 80px -30px rgba(12,22,15,0.55); display:flex; flex-direction:column; gap:10px; transition:transform .6s cubic-bezier(.16,1,.3,1);" style-hover="transform:translateY(-6px);">
+          <span style="font:600 10px/1 'Hanken Grotesk', sans-serif; letter-spacing:0.16em; text-transform:uppercase; color:#3F6E5A;">Conceptual diagram, not a screenshot</span>
+          <span style="display:flex; align-items:center; justify-content:space-between; gap:8px; padding:10px 12px; border-radius:6px; background:#fff; font:500 13px/1.2 'Hanken Grotesk', sans-serif;">Operational records<span style="color:#3F6E5A;">↓</span></span>
+          <span style="display:flex; align-items:center; justify-content:space-between; gap:8px; padding:10px 12px; border-radius:6px; background:#15201A; color:#EEF1EC; font:600 13px/1.2 'Hanken Grotesk', sans-serif;">Reporting warehouse<span style="color:#C9D98A;">↓</span></span>
+          <span style="display:grid; grid-template-columns:1fr 1fr; gap:8px;"><span style="padding:10px 12px; border-radius:6px; background:#fff; font:500 13px/1.2 'Hanken Grotesk', sans-serif;">Dashboards</span><span style="padding:10px 12px; border-radius:6px; background:#fff; font:500 13px/1.2 'Hanken Grotesk', sans-serif;">Explanations</span></span>
+        </div>
+      </a>
+    </article>
+  </div>
+</section>
 
-      <div class="modal-section">
-        <h3>The Problem</h3>
-        <p>Transform raw coffee sales data into an interactive dashboard that reveals trends and performance metrics at a glance.</p>
+<section id="writing" data-tone="light" data-screen-label="Writing" style="position:relative; scroll-margin-top:60px;">
+  <div data-speed="-0.08" aria-hidden="true" style="position:absolute; left:0; right:0; top:-14vh; height:60vh; pointer-events:none; -webkit-mask-image:linear-gradient(180deg,transparent,#000 40%,#000 55%,transparent); mask-image:linear-gradient(180deg,transparent,#000 40%,#000 55%,transparent);">
+    <img src="images/mist.jpg" alt="" style="width:100%; height:100%; object-fit:cover; opacity:.5;">
+  </div>
+  <div style="position:relative; max-width:1480px; margin:0 auto; padding:clamp(40px,5vw,72px) clamp(18px,4vw,52px) clamp(80px,10vw,140px); display:flex; flex-direction:column; gap:clamp(40px,5vw,64px);">
+    <p data-reveal="" style="margin:0; font:600 11px/1 'Hanken Grotesk', sans-serif; letter-spacing:0.2em; text-transform:uppercase; color:#4B6B34;">Writing</p>
+    <a href="warfield.html" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr)); gap:clamp(28px,5vw,80px); align-items:center; text-decoration:none; color:#18241B;" style-hover="color:#18241B;">
+      <div data-speed="0.04" style="position:relative;">
+        <div style="position:relative; aspect-ratio:1/1; overflow:hidden; border-radius:4px; box-shadow:0 40px 80px -30px rgba(24,36,27,0.45);">
+          <img src="https://spillmagazine.com/wp-content/uploads/2022/06/Warfield-790x790.jpg" alt="Justin Warfield. Photo: Kateryna Debkaliuk" style="width:100%; height:100%; object-fit:cover; display:block; view-transition-name:warfield-portrait;">
+        </div>
       </div>
-
-
-      <div class="modal-section">
-        <h3>What I Built</h3>
-        <p>A comprehensive Excel dashboard combining advanced formula engineering with interactive controls.</p>
-        <ul>
-          <li>Dynamic lookups using XLOOKUP and Index-Match formulas for flexible data retrieval.</li>
-          <li>Sales calculations with multiplication formulas and nested IF functions for multi-criteria logic.</li>
-          <li>Pivot tables for dimensional analysis with timeline and slicer controls for real-time exploration.</li>
-          <li>Careful formatting with date and number standards, conditional formatting, and visual hierarchies.</li>
-        </ul>
+      <div style="display:flex; flex-direction:column; gap:20px;">
+        <p data-reveal="" style="margin:0; font:600 11px/1 'Hanken Grotesk', sans-serif; letter-spacing:0.2em; text-transform:uppercase; color:#4B6B34;">Music journalism · Feature interview · The Spill Magazine</p>
+        <h2 data-reveal="" data-d="60" style="margin:0; font:300 clamp(40px,5vw,78px)/1 'Cormorant', serif; letter-spacing:-0.03em; text-wrap:balance;">Justin Warfield on writing a song for <span style="font-style:italic;">someone else’s anniversary</span></h2>
+        <p data-reveal="" data-d="100" style="margin:0; font:400 18px/1.65 'Hanken Grotesk', sans-serif; color:#46554A; max-width:32em; text-wrap:pretty;">A conversation with the She Wants Revenge frontman about a commissioned song, the rules the band once set for itself, and what happens when you drop them.</p>
+        <span style="display:inline-flex; gap:12px; align-items:center; font:600 12px/1 'Hanken Grotesk', sans-serif; letter-spacing:0.12em; text-transform:uppercase;">Read the feature <span aria-hidden="true">→</span></span>
       </div>
-
-
-      <div class="modal-section">
-        <h3>Result</h3>
-        <p>An analytics-ready dashboard that demonstrates proficiency with Excel's features with special attention paid to visualization.</p>
+    </a>
+    <div style="display:flex; flex-direction:column; gap:18px;">
+      <div style="display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:clamp(8px,1.4vw,18px);">
+        <sc-for list="{{ covers }}" as="c" hint-placeholder-count="0">
+          <a href="{{ c.href }}" aria-label="{{ c.label }}" style="display:block; aspect-ratio:1/1; overflow:hidden; border-radius:3px; box-shadow:0 20px 40px -24px rgba(24,36,27,0.5); transition:transform .5s cubic-bezier(.16,1,.3,1), box-shadow .5s;" style-hover="transform:translateY(-6px); box-shadow:0 30px 60px -24px rgba(24,36,27,0.6);" style-focus="transform:translateY(-6px);" style-active="transform:scale(.97);"><img src="{{ c.src }}" alt="" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block; view-transition-name:{{ c.vt }};"></a>
+        </sc-for>
       </div>
+      <a href="music.html" style="align-self:flex-start; font:600 12px/1 'Hanken Grotesk', sans-serif; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; padding:12px 0; border-bottom:1px solid currentColor;">Reviews and interviews →</a>
+    </div>
+    <a href="profiles.html" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr)); gap:14px 60px; align-items:baseline; margin-top:clamp(20px,4vw,48px); padding:clamp(28px,4vw,44px) 0; border-top:1px solid rgba(24,36,27,0.16); border-bottom:1px solid rgba(24,36,27,0.16); text-decoration:none; color:#18241B; transition:padding .5s cubic-bezier(.16,1,.3,1);" style-hover="padding-left:16px; color:#18241B;" style-focus="padding-left:16px;">
+      <span style="font:italic 300 clamp(40px,5vw,76px)/1 'Cormorant', serif; letter-spacing:-0.03em;">Profile writing →</span>
+      <span style="display:flex; flex-direction:column; gap:10px;"><span style="font:600 11px/1 'Hanken Grotesk', sans-serif; letter-spacing:0.2em; text-transform:uppercase; color:#8A6A3A;">VIDA Select</span><span style="font:400 18px/1.6 'Hanken Grotesk', sans-serif; color:#3A493E;">Persuasive profiles for premium clients, and later, editing other writers’ profiles.</span></span>
+    </a>
+  </div>
+</section>
 
-
-      <div class="modal-links">
-        <a href="assets/coffeeOrdersData.xlsx" download>Download Excel</a>
+<section data-tone="dark" data-screen-label="Home end" style="position:relative; overflow:hidden; background:linear-gradient(180deg,#F1F2EC 0,#0E1710 34vh); color:#F1F2EC;">
+  <div data-speed="-0.12" aria-hidden="true" style="position:absolute; inset:0; pointer-events:none; -webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 42%); mask-image:linear-gradient(180deg,transparent 0%,#000 42%);">
+    <img src="images/summit.jpg" alt="" style="width:100%; height:120%; object-fit:cover; object-position:60% 50%; opacity:.8;">
+  </div>
+  <div aria-hidden="true" style="position:absolute; inset:0; background:linear-gradient(90deg,rgba(14,23,16,0.7),rgba(14,23,16,0.1) 70%);"></div>
+  <div style="position:relative; max-width:1480px; margin:0 auto; padding:clamp(220px,28vw,360px) clamp(18px,4vw,52px) 32px; display:flex; flex-direction:column; gap:clamp(48px,7vw,90px);">
+    <div style="display:flex; flex-direction:column; gap:22px;">
+      <h2 data-reveal="" style="margin:0; font:300 clamp(56px,9vw,150px)/0.88 'Cormorant', serif; letter-spacing:-0.04em; text-shadow:0 2px 36px rgba(8,16,10,0.5);">Say <span style="font-style:italic; font-weight:400;">hello</span></h2>
+      <div data-reveal="" data-d="80" style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="about.html#contact" style="display:inline-flex; align-items:center; gap:10px; min-height:44px; padding:0 22px; white-space:nowrap; border-radius:999px; background:#F1F2EC; color:#18241B; font:600 12px/1 'Hanken Grotesk', sans-serif; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; transition:transform .4s cubic-bezier(.16,1,.3,1);" style-hover="transform:translateY(-2px); color:#18241B;" style-active="transform:scale(.97);">Contact details</a>
+        <a href="about.html" style="display:inline-flex; align-items:center; gap:10px; min-height:44px; padding:0 22px; white-space:nowrap; border-radius:999px; border:1px solid rgba(241,242,236,0.6); color:#F1F2EC; font:600 12px/1 'Hanken Grotesk', sans-serif; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; transition:transform .4s cubic-bezier(.16,1,.3,1), background .4s;" style-hover="transform:translateY(-2px); background:rgba(241,242,236,0.14); color:#F1F2EC;" style-active="transform:scale(.97);">About me</a>
       </div>
     </div>
+    <div style="display:flex; justify-content:space-between; gap:12px 24px; flex-wrap:wrap; padding-top:20px; border-top:1px solid rgba(241,242,236,0.16); font:400 13px/1.6 'Hanken Grotesk', sans-serif; color:rgba(241,242,236,0.8);">
+      <span>Dariya Ostrovska</span>
+      <span style="color:#C9D98A; border:1px dashed #C9D98A; border-radius:999px; padding:1px 10px;">To add: landscape photo credits</span>
+    </div>
   </div>
-
-
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    // Navigation
-    const navLinks = document.querySelectorAll('.nav-link');
-    const pages = document.querySelectorAll('.page');
-
-
-    function switchPage(pageId) {
-      navLinks.forEach(link => {
-        link.classList.toggle('active', link.dataset.page === pageId);
-      });
-      
-      pages.forEach(page => {
-        page.classList.toggle('active', page.id === pageId);
-      });
-    }
-
-
-    navLinks.forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        switchPage(link.dataset.page);
-        history.pushState(null, '', `#${link.dataset.page}`);
-      });
-    });
-
-
-    // Handle initial hash
-    if (window.location.hash) {
-      const pageId = window.location.hash.slice(1);
-      if (document.getElementById(pageId)) {
-        switchPage(pageId);
-      }
-    }
-
-
-    // Handle back/forward
-    window.addEventListener('popstate', () => {
-      const pageId = window.location.hash.slice(1) || 'home';
-      switchPage(pageId);
-    });
-
-
-    // Modal
-    const modalOverlay = document.getElementById('modalOverlay');
-    const northwindModal = document.getElementById('northwindModal');
-    const coffeeModal = document.getElementById('coffeeModal');
-
-
-    function openModal(project) {
-      modalOverlay.classList.add('visible');
-      if (project === 'northwind') {
-        northwindModal.classList.add('visible');
-      } else if (project === 'coffee') {
-        coffeeModal.classList.add('visible');
-      }
-      document.body.style.overflow = 'hidden';
-    }
-
-
-    function closeModal() {
-      modalOverlay.classList.remove('visible');
-      northwindModal.classList.remove('visible');
-      coffeeModal.classList.remove('visible');
-      document.body.style.overflow = '';
-    }
-
-
-    // Close modal on escape key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeModal();
-    });
-
-
-    // Set video sources
-    document.querySelector('.project-card:nth-child(1) video').src = 'assets/northwind-preview.mp4';
-    document.querySelector('.project-card:nth-child(2) video').src = 'assets/coffee-preview.mp4';
-  </script>
+</section>
+</main>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    const go = () => { this.off = window.Site.init(); };
+    if (window.Site) go(); else this.iv = setInterval(() => { if (window.Site) { clearInterval(this.iv); go(); } }, 40);
+  }
+  componentWillUnmount() { clearInterval(this.iv); this.off && this.off(); }
+  renderVals() {
+    const u = 'https://spillmagazine.com/wp-content/uploads/';
+    return {
+      covers: [
+        { k: 'riff', src: u + '2023/08/Hurray-For-The-Riff-Raff-790x790.jpg', label: 'Hurray for the Riff Raff, live review' },
+        { k: 'pj', src: u + '2022/12/PJ-Harvey.jpg', label: 'PJ Harvey, B-Sides, Demos & Rarities review' },
+        { k: 'carla', src: u + '2023/01/Carla-dal-Forno.jpg', label: 'Carla dal Forno, Come Around review' },
+        { k: 'krivchenia', src: u + '2022/06/James-Krivchenia.jpg', label: 'James Krivchenia, Blood Karaoke review' },
+        { k: 'widowspeak', src: u + '2022/06/Widowspeak.jpg', label: 'Widowspeak, The Jacket review' },
+      ].map(c => ({ ...c, href: 'music.html#' + c.k, vt: 'cover-' + c.k })),
+    };
+  }
+}
+</script>
 </body>
 </html>
