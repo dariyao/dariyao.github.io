@@ -28,6 +28,7 @@ a:hover{color:inherit}
 ::selection{background:#E5D3B0;color:#221E18}
 :focus-visible{outline:2px solid #8A6A3A;outline-offset:3px;border-radius:4px}
 </style>
+<link rel="stylesheet" href="editorial.css">
 </helmet>
 
 <header data-site-header="" style="position:fixed; top:0; left:0; right:0; z-index:100; view-transition-name:site-header; color:#18241B; transition:background .5s, color .5s, box-shadow .5s;">
@@ -44,51 +45,7 @@ a:hover{color:inherit}
   </div>
 </header>
 
-<main id="main">
-<section data-tone="light" data-screen-label="Profiles opener" style="position:relative; overflow:hidden;">
-  <div data-speed="-0.15" aria-hidden="true" style="position:absolute; left:0; right:0; top:0; height:90vh; pointer-events:none; -webkit-mask-image:linear-gradient(180deg,#000 30%,transparent); mask-image:linear-gradient(180deg,#000 30%,transparent);">
-    <img src="images/mist.jpg" alt="" style="width:100%; height:100%; object-fit:cover; object-position:70% 40%; opacity:.6; filter:sepia(.2);">
-  </div>
-  <div style="position:relative; max-width:1080px; margin:0 auto; padding:clamp(180px,24vh,260px) clamp(18px,4vw,52px) clamp(90px,12vw,160px); display:flex; flex-direction:column; gap:28px;">
-    <nav aria-label="Writing" data-reveal="" style="display:flex; gap:22px; flex-wrap:wrap; font:500 14px/1 'Hanken Grotesk', sans-serif;">
-        <a href="music.html" style="padding:10px 0; text-decoration:none; border-bottom:1px solid transparent; color:#6B5F4E; transition:color .3s;" style-hover="color:#221E18;">Music journalism</a>
-        <a href="profiles.html" aria-current="page" style="padding:10px 0; text-decoration:none; border-bottom:1px solid #221E18; color:#221E18; transition:color .3s;" style-hover="color:#221E18;">Profile writing</a>
-      </nav>
-    <p data-reveal="" style="margin:0; font:600 11px/1 'Hanken Grotesk', sans-serif; letter-spacing:0.2em; text-transform:uppercase; color:#8A6A3A;">Profile writing · VIDA Select</p>
-    <h1 data-reveal="" data-d="100" style="margin:0; font:italic 300 clamp(56px,8.4vw,136px)/0.92 'Cormorant', serif; letter-spacing:-0.035em;">Other people, <span style="font-style:normal;">on paper</span></h1>
-    <div data-reveal="" data-d="200" style="display:flex; flex-direction:column; gap:18px; font:400 20px/1.7 'Hanken Grotesk', sans-serif; max-width:34em; text-wrap:pretty; color:#3B342A;">
-      <p style="margin:0;">At VIDA Select I wrote persuasive, personality-driven profiles for premium clients. Later I moved into editorial leadership, editing other writers’ profiles.</p>
-      <p style="margin:0;">The clients are real people and the work is confidential, so what’s below is anonymised.</p>
-    </div>
-  </div>
-</section>
-
-<section data-tone="light" data-screen-label="Excerpts" style="position:relative;">
-  <div style="max-width:1080px; margin:0 auto; padding:0 clamp(18px,4vw,52px) clamp(100px,14vw,200px); display:flex; flex-direction:column; gap:clamp(64px,9vw,120px);">
-    <sc-for list="{{ slots }}" as="s" hint-placeholder-count="3">
-      <figure data-reveal="" style="margin:0; display:grid; grid-template-columns:minmax(0,90px) minmax(0,1fr); gap:clamp(16px,3vw,40px); align-items:start; margin-left:{{ s.indent }};">
-        <span aria-hidden="true" style="font:300 110px/0.7 'Cormorant', serif; color:#C9B38A;">“</span>
-        <div style="display:flex; flex-direction:column; gap:16px;">
-          <div style="min-height:140px; display:flex; flex-direction:column; gap:14px; justify-content:center; padding:10px 0; border-bottom:1px solid rgba(34,30,24,0.18);">
-            <span style="display:block; height:1px; background:rgba(34,30,24,0.14);"></span>
-            <span style="display:block; height:1px; background:rgba(34,30,24,0.14); width:86%;"></span>
-            <span style="display:block; height:1px; background:rgba(34,30,24,0.14); width:64%;"></span>
-          </div>
-          <figcaption style="display:flex; gap:12px; flex-wrap:wrap; align-items:center; font:500 13px/1.5 'Hanken Grotesk', sans-serif; color:#6B5F4E;"><span>{{ s.cap }}</span><span style="font:600 10px/1 'Hanken Grotesk', sans-serif; letter-spacing:0.12em; text-transform:uppercase; color:#8A6A3A; border:1px dashed #8A6A3A; border-radius:999px; padding:5px 9px;">Add approved excerpt</span></figcaption>
-        </div>
-      </figure>
-    </sc-for>
-    <p data-reveal="" style="margin:0; font:italic 300 clamp(26px,2.6vw,38px)/1.25 'Cormorant', serif; max-width:26ch;">Full samples on request, with the client’s permission.</p>
-  </div>
-</section>
-
-<section data-tone="light" data-screen-label="Profiles next" style="border-top:1px solid rgba(34,30,24,0.14);">
-  <div style="max-width:1480px; margin:0 auto; padding:clamp(60px,8vw,110px) clamp(18px,4vw,52px); display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap;">
-    <a href="music.html" style="display:flex; flex-direction:column; gap:10px; text-decoration:none;"><span style="font:600 11px/1 'Hanken Grotesk', sans-serif; letter-spacing:0.2em; text-transform:uppercase; color:#8A6A3A;">Previous</span><span style="font:italic 300 clamp(30px,3.4vw,52px)/1 'Cormorant', serif;">← Music journalism</span></a>
-    <a href="about.html" style="display:flex; flex-direction:column; gap:10px; text-align:right; text-decoration:none;"><span style="font:600 11px/1 'Hanken Grotesk', sans-serif; letter-spacing:0.2em; text-transform:uppercase; color:#8A6A3A;">Next</span><span style="font:italic 300 clamp(30px,3.4vw,52px)/1 'Cormorant', serif;">About →</span></a>
-  </div>
-</section>
-</main>
+<main id="main"><div class="editorial profile-editorial"><nav class="writing-nav" aria-label="Writing"><a href="music.html">Music Journalism</a><a href="profiles.html" aria-current="page">Profile Writing</a></nav><div class="profile-opening"><div class="intro"><p class="eyebrow">Profile Writing &amp; Editing · VIDA Select</p><h1>Other people,<br><em>on paper.</em></h1><p class="lead">At VIDA Select I wrote personality-driven profiles for premium clients, then moved into editorial leadership, editing other writers’ work.</p><p>This guide outlines an approach to writing a profile that feels specific, natural and recognisably human.</p></div><aside class="editor-lens" aria-label="The editorial lens"><p class="eyebrow">The Editorial Lens</p><p class="lens-line">Specific enough<br><em>to picture.</em></p><p class="lens-line">Natural enough<br><em>to say aloud.</em></p><p class="lens-line">True enough<br><em>to recognise.</em></p><p class="lens-note">Keep the person in the prose.</p></aside></div><div class="profile-guide"><div class="profile-guide-heading"><p class="eyebrow">The Approach</p><p class="profile-guide-note">Listen closely.<br>Write specifically.<br>Edit with care.</p></div><div class="profile-steps"><section class="profile-step"><span class="step-number" aria-hidden="true">01</span><div><h2>Start with the Person</h2><p>Look for the details that someone would actually notice in conversation: a ritual, an enthusiasm, a surprising preference. Ask follow-up questions until you have something more revealing than a list of interests.</p></div></section><section class="profile-step"><span class="step-number" aria-hidden="true">02</span><div><h2>Show the Trait</h2><p>“Adventurous” tells a reader very little. A concrete detail gives them something to picture and respond to. Choose details that reveal a quality without announcing it.</p></div></section><section class="profile-step"><span class="step-number" aria-hidden="true">03</span><div><h2>Keep Their Voice</h2><p>Polish should make a person easier to hear. Read the draft aloud, remove expressions they would never use, and keep the humour at a level that feels natural to them.</p></div></section><section class="profile-step"><span class="step-number" aria-hidden="true">04</span><div><h2>Give the Reader a Way In</h2><p>A good profile offers openings for a conversation. A particular interest or gentle question gives someone a better starting point than a generic invitation to get in touch.</p></div></section><section class="profile-step"><span class="step-number" aria-hidden="true">05</span><div><h2>Edit for Recognition</h2><p>Check accuracy, rhythm and repetition. Then ask whether the person would recognise themselves in the result. A persuasive profile should create interest without promising a personality that is not there.</p></div></section></div></div><div class="profile-ending"><p>Good editing makes someone<br><em>easier to hear.</em></p><div class="link-row"><a href="music.html">Music Journalism ↗</a><a href="about.html#contact">Get In Touch ↗</a></div></div></div></main>
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
@@ -97,13 +54,7 @@ class Component extends DCLogic {
     if (window.Site) go(); else this.iv = setInterval(() => { if (window.Site) { clearInterval(this.iv); go(); } }, 40);
   }
   componentWillUnmount() { clearInterval(this.iv); this.off && this.off(); }
-  renderVals() {
-    return { slots: [
-      { cap: 'Opening lines of a client profile', indent: '0px' },
-      { cap: 'A draft I edited, before and after', indent: 'clamp(0px,8vw,120px)' },
-      { cap: 'A line I’m still pleased with', indent: '0px' },
-    ] };
-  }
+  renderVals() { return {}; }
 }
 </script>
 </body>

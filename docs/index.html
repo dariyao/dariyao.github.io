@@ -12,6 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&amp;family=Hanken+Grotesk:wght@300..700&amp;display=swap">
+<link rel="stylesheet" href="./photo-treatment.css">
 <script src="./site.js"></script>
 <script src="./image-slot.js"></script>
 <style>
@@ -23,12 +24,13 @@
 @keyframes vtin{from{opacity:0;transform:translateY(8px)}}
 @media (prefers-reduced-motion: reduce){::view-transition-old(root),::view-transition-new(root),::view-transition-group(*){animation:none}html{scroll-behavior:auto}}
 html{scroll-behavior:smooth}
-body{margin:0;background:#F1F2EC;color:#18241B;-webkit-font-smoothing:antialiased;font-family:'Hanken Grotesk',system-ui,sans-serif}
+body{margin:0;background:#F4F2EB;color:#18241B;-webkit-font-smoothing:antialiased;font-family:'Hanken Grotesk',system-ui,sans-serif}
 a{color:inherit;text-decoration-thickness:1px;text-underline-offset:4px}
 a:hover{color:inherit}
 ::selection{background:#C9D98A;color:#18241B}
 :focus-visible{outline:2px solid #6E8F3A;outline-offset:3px;border-radius:4px}
 </style>
+<link rel="stylesheet" href="editorial.css">
 </helmet>
 
 <header data-site-header="" style="position:fixed; top:0; left:0; right:0; z-index:100; view-transition-name:site-header; color:#F1F2EC; transition:background .5s, color .5s, box-shadow .5s;">
@@ -36,7 +38,7 @@ a:hover{color:inherit}
   <div style="max-width:1480px; margin:0 auto; padding:4px clamp(18px,4vw,52px); display:flex; align-items:center; justify-content:space-between; gap:0 28px; flex-wrap:wrap;">
     <a href="index.html" aria-current="page" style="font:italic 500 23px/1 'Cormorant', serif; text-decoration:none; white-space:nowrap; padding:12px 0;">Dariya Ostrovska</a>
     <nav aria-label="Main" style="display:flex; align-items:center; gap:clamp(16px,2.6vw,34px); font:500 14px/1 'Hanken Grotesk', sans-serif; letter-spacing:0.02em;">
-      <a href="index.html#work" style="text-decoration:none; text-underline-offset:7px; text-decoration-thickness:1px; padding:14px 0; white-space:nowrap; transition:opacity .3s;" style-hover="opacity:.65;">Work</a>
+      <a href="index.html#work" data-smooth-scroll="" style="text-decoration:none; text-underline-offset:7px; text-decoration-thickness:1px; padding:14px 0; white-space:nowrap; transition:opacity .3s;" style-hover="opacity:.65;">Work</a>
       <a href="music.html" style="text-decoration:none; text-underline-offset:7px; text-decoration-thickness:1px; padding:14px 0; white-space:nowrap; transition:opacity .3s;" style-hover="opacity:.65;">Writing</a>
       <a href="about.html" style="text-decoration:none; text-underline-offset:7px; text-decoration-thickness:1px; padding:14px 0; white-space:nowrap; transition:opacity .3s;" style-hover="opacity:.65;">About</a>
       <a href="about.html#contact" style="text-decoration:none; text-underline-offset:7px; text-decoration-thickness:1px; padding:14px 0; white-space:nowrap; transition:opacity .3s;" style-hover="opacity:.65;">Contact</a>
@@ -46,62 +48,59 @@ a:hover{color:inherit}
 </header>
 
 <main id="main">
-<section data-tone="dark" data-screen-label="Home hero" style="position:relative; height:max(92svh,580px); overflow:hidden; background:#0C160F; color:#F1F2EC;">
-  <div data-speed="-0.25" style="position:absolute; inset:-6% 0;">
-    <img src="images/alaska-2560.jpg" alt="Cloud lifting off a mountain ridge above spruce forest" style="width:100%; height:100%; object-fit:cover; object-position:58% 42%; display:block; will-change:transform;">
+<section class="home-hero" data-tone="light" data-screen-label="Home hero">
+  <div class="hero-content">
+    <div class="hero-introduction">
+      <h1 class="hero-name" data-reveal="">Dariya <span>Ostrovska</span></h1>
+      <p class="hero-description" data-reveal="" data-d="100">I turn methodologies and operations data into tools and reports people can use. I also write profiles, reviews and interviews.</p>
+      <div class="hero-actions" data-reveal="" data-d="140">
+        <a class="hero-primary" href="#work" data-smooth-scroll="">See the work <span aria-hidden="true">↓</span></a>
+      </div>
+    </div>
+    <img class="hero-portrait" src="assets/Dariya_Ostrovska.png" alt="Dariya Ostrovska" width="220" height="220">
   </div>
-  <div aria-hidden="true" style="position:absolute; inset:0; background:linear-gradient(180deg,rgba(12,22,15,0.42) 0%,rgba(12,22,15,0) 24%,rgba(12,22,15,0) 50%,rgba(12,22,15,0.5) 80%,rgba(12,22,15,0.25) 100%);"></div>
-  <div aria-hidden="true" style="position:absolute; left:0; right:0; bottom:0; height:30vh; background:linear-gradient(180deg,rgba(241,242,236,0) 0%,rgba(241,242,236,0.18) 40%,rgba(241,242,236,0.7) 78%,#F1F2EC 100%);"></div>
-  <div style="position:relative; height:100%; max-width:1480px; margin:0 auto; padding:0 clamp(18px,4vw,52px) clamp(96px,17vh,170px); box-sizing:border-box; display:flex; flex-direction:column; justify-content:flex-end; gap:20px;">
-    <h1 data-reveal="" style="margin:0; font:300 clamp(56px,11vw,184px)/0.86 'Cormorant', serif; letter-spacing:-0.035em; text-shadow:0 2px 36px rgba(8,16,10,0.4);">Dariya <span style="font-style:italic; font-weight:400;">Ostrovska</span></h1>
-    <p data-reveal="" data-d="100" style="margin:0; font:400 clamp(18px,1.6vw,22px)/1.5 'Hanken Grotesk', sans-serif; max-width:34ch; text-shadow:0 1px 18px rgba(8,16,10,0.65);">I turn methodologies and operations data into tools and reports people can use. I also write profiles, reviews and interviews.</p>
-    <div data-reveal="" data-d="140" style="display:flex; gap:12px; flex-wrap:wrap;">
-      <a href="#work" style="display:inline-flex; align-items:center; gap:10px; min-height:44px; padding:0 20px; white-space:nowrap; border-radius:999px; background:#F1F2EC; color:#18241B; font:600 12px/1 'Hanken Grotesk', sans-serif; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; transition:transform .4s cubic-bezier(.16,1,.3,1), background .4s;" style-hover="transform:translateY(-2px); background:#fff; color:#18241B;" style-active="transform:scale(.97);">See the work <span aria-hidden="true">↓</span></a>
-      <a href="#writing" style="display:inline-flex; align-items:center; gap:10px; min-height:44px; padding:0 20px; white-space:nowrap; border-radius:999px; border:1px solid rgba(241,242,236,0.6); color:#F1F2EC; font:600 12px/1 'Hanken Grotesk', sans-serif; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; backdrop-filter:blur(8px); transition:transform .4s cubic-bezier(.16,1,.3,1), background .4s;" style-hover="transform:translateY(-2px); background:rgba(241,242,236,0.14); color:#F1F2EC;" style-active="transform:scale(.97);">Writing</a>
+  <div class="hero-photo" data-speed="0.07">
+    <div class="hero-scene">
+      <picture class="landscape-photo">
+        <source media="(max-width:680px)" srcset="images/simon-lohmann-valley.jpg">
+        <img src="images/simon-lohmann-valley.jpg" alt="Green mountain slopes and a hazy layered valley in evening sunlight" width="6720" height="4480" fetchpriority="high">
+      </picture>
     </div>
   </div>
 </section>
 
 <section id="work" data-tone="light" data-screen-label="Work" style="position:relative; scroll-margin-top:60px;">
-  <div style="max-width:1480px; margin:0 auto; padding:clamp(40px,5vw,72px) clamp(18px,4vw,52px) clamp(80px,10vw,140px); display:flex; flex-direction:column; gap:clamp(80px,11vw,160px);">
+  <div style="max-width:1480px; margin:0 auto; padding:clamp(40px,5vw,72px) clamp(18px,4vw,52px) clamp(80px,10vw,140px); display:flex; flex-direction:column; gap:32px;">
     <p data-reveal="" style="margin:0; font:600 11px/1 'Hanken Grotesk', sans-serif; letter-spacing:0.2em; text-transform:uppercase; color:#4B6B34;">Work</p>
 
-    <article style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr)); gap:clamp(32px,5vw,80px); align-items:center;">
-      <a href="sroi.html" aria-label="SROI forecasting calculator case study" style="position:relative; display:block; aspect-ratio:5/4; text-decoration:none;">
-        <div data-speed="-0.06" aria-hidden="true" style="position:absolute; inset:-4%; overflow:hidden; -webkit-mask-image:radial-gradient(ellipse 60% 58% at 50% 50%,#000 30%,transparent 100%); mask-image:radial-gradient(ellipse 60% 58% at 50% 50%,#000 30%,transparent 100%);">
-          <img src="images/forest.jpg" alt="" style="position:absolute; inset:-8% 0; width:100%; height:116%; object-fit:cover; object-position:50% 35%; view-transition-name:sroi-scene;">
-        </div>
-        <div style="position:absolute; left:12%; right:12%; top:20%; aspect-ratio:16/10; border-radius:8px; overflow:hidden; background:#E6EADF; box-shadow:0 40px 80px -30px rgba(12,22,15,0.6), 0 0 0 1px rgba(255,255,255,0.3); transition:transform .6s cubic-bezier(.16,1,.3,1);" style-hover="transform:translateY(-6px);">
-          <image-slot id="home-sroi" shape="rect" placeholder="Calculator screenshot" style="position:absolute; inset:0; width:100%; height:100%; color:#18241B;"></image-slot>
-        </div>
-      </a>
+    <article class="project-panel" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr)); gap:clamp(32px,5vw,80px); align-items:center;">
+      <a href="sroi.html" class="project-preview calculator-preview" aria-label="Explore the SROI Forecast Calculator"><figure><img src="images/sroi-interface-preview.png" alt="The public SROI calculator introduction and section navigation" width="1280" height="720" loading="lazy"><figcaption>Public Calculator · Interface Preview</figcaption></figure></a>
       <div style="display:flex; flex-direction:column; gap:20px; max-width:560px;">
-        <p data-reveal="" style="margin:0; font:600 11px/1.5 'Hanken Grotesk', sans-serif; letter-spacing:0.18em; text-transform:uppercase; color:#4B6B34;">Forecasting tool · Methodology by Melek De-Wint</p>
-        <h2 data-reveal="" data-d="60" style="margin:0; font:300 clamp(40px,4.6vw,72px)/1 'Cormorant', serif; letter-spacing:-0.03em; text-wrap:balance;"><a href="sroi.html" style="text-decoration:none;" style-hover="text-decoration:underline;">SROI forecasting calculator</a></h2>
-        <p data-reveal="" data-d="100" style="margin:0; font:400 18px/1.65 'Hanken Grotesk', sans-serif; color:#3A493E; text-wrap:pretty;">An online calculator built on Melek De-Wint’s social return on investment methodology. I translated her method into a tool other people can use. What it produces is a forecast, not measured impact.</p>
-        <div data-reveal="" data-d="120" style="display:flex; align-items:center; gap:14px; font:400 14px/1.4 'Hanken Grotesk', sans-serif; color:#4E5E53;"><span aria-hidden="true" style="white-space:nowrap; flex-shrink:0; font:200 34px/1 'Hanken Grotesk', sans-serif; letter-spacing:-0.04em; color:#18241B;">_<span style="font:italic 300 1em/1 'Cormorant', serif; color:#6E8F3A;"> : </span>1</span><span>Estimated social value per dollar invested</span></div>
+        <p data-reveal="" style="margin:0; font:600 11px/1.5 'Hanken Grotesk', sans-serif; letter-spacing:0.18em; text-transform:uppercase; color:#4B6B34;">Forecast Tool · Methodology by Melek De-Wint</p>
+        <h2 class="project-title" data-reveal="" data-d="60"><a href="sroi.html">SROI Forecast Calculator</a></h2>
+        <p data-reveal="" data-d="100" style="margin:0; font:400 18px/1.65 'Hanken Grotesk', sans-serif; color:#3A493E; text-wrap:pretty;">An online calculator built on Melek De-Wint's application of the Social Return on Investment methodology onto furniture banks across North America.</p>
+        <p class="project-definition">SROI (Social Return on Investment) looks beyond what an organization did to ask what value its work actually created. It asks who was affected, what outcomes followed, how much those outcomes mattered, and how much of that value the organization can reasonably claim.</p>
+        <p class="forecast-note" data-reveal="" data-d="120">A forecast based on model assumptions, not measured impact.</p>
         <a href="sroi.html" style="align-self:flex-start; display:inline-flex; align-items:center; gap:12px; min-height:44px; padding:0 22px; white-space:nowrap; border-radius:999px; background:#18241B; color:#F1F2EC; font:600 12px/1 'Hanken Grotesk', sans-serif; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; transition:transform .4s cubic-bezier(.16,1,.3,1), background .4s;" style-hover="transform:translateY(-2px); background:#3C5A2A; color:#F1F2EC;" style-active="transform:scale(.97);">Read the case study <span aria-hidden="true">→</span></a>
       </div>
     </article>
 
-    <article style="display:flex; flex-wrap:wrap-reverse; gap:clamp(32px,5vw,80px); align-items:center;">
+    <hr class="project-divider" aria-hidden="true">
+
+    <article class="project-panel" style="display:flex; flex-wrap:wrap-reverse; gap:clamp(32px,5vw,80px); align-items:center;">
       <div style="flex:1 1 400px; display:flex; flex-direction:column; gap:20px; max-width:560px;">
-        <p data-reveal="" style="margin:0; font:600 11px/1.5 'Hanken Grotesk', sans-serif; letter-spacing:0.18em; text-transform:uppercase; color:#3F6E5A;">Data &amp; reporting</p>
-        <h2 data-reveal="" data-d="60" style="margin:0; font:600 clamp(34px,3.8vw,58px)/1 'Hanken Grotesk', sans-serif; letter-spacing:-0.045em; text-wrap:balance;"><a href="reporting.html" style="text-decoration:none;" style-hover="text-decoration:underline;">Reporting warehouse and dashboards</a></h2>
-        <p data-reveal="" data-d="100" style="margin:0; font:400 18px/1.65 'Hanken Grotesk', sans-serif; color:#3A493E; text-wrap:pretty;">Data investigation, a reporting warehouse and dashboards built on operations data, with written explanations so colleagues can understand what the numbers show.</p>
-        <a href="reporting.html" style="align-self:flex-start; display:inline-flex; align-items:center; gap:12px; min-height:44px; padding:0 22px; white-space:nowrap; border-radius:999px; background:#15201A; color:#EEF1EC; font:600 12px/1 'Hanken Grotesk', sans-serif; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; transition:transform .4s cubic-bezier(.16,1,.3,1), background .4s;" style-hover="transform:translateY(-2px); background:#3F6E5A; color:#EEF1EC;" style-active="transform:scale(.97);">Read the case study <span aria-hidden="true">→</span></a>
-        <a href="reporting.html#learning" style="align-self:flex-start; font:500 14px/1.4 'Hanken Grotesk', sans-serif; color:#4E5E53; padding:6px 0;">Also: Northwind and Excel learning projects →</a>
+        <p data-reveal="" style="margin:0; font:600 11px/1.5 'Hanken Grotesk', sans-serif; letter-spacing:0.18em; text-transform:uppercase; color:#3F6E5A;">Data engineering &amp; reporting</p>
+        <h2 class="project-title" data-reveal="" data-d="60"><a href="reporting.html">Furniture Bank Data Warehouse</a></h2>
+        <p data-reveal="" data-d="100" style="margin:0; font:400 18px/1.65 'Hanken Grotesk', sans-serif; color:#3A493E; text-wrap:pretty;">In under five months, I built a BigQuery warehouse and an executive dashboard with dedicated views for leadership, sales, operations, impact and fundraising, connecting five systems through shared reporting definitions.</p>
+        <a href="reporting.html" style="align-self:flex-start; display:inline-flex; align-items:center; gap:12px; min-height:44px; padding:0 22px; white-space:nowrap; border-radius:999px; background:#15201A; color:#EEF1EC; font:600 12px/1 'Hanken Grotesk', sans-serif; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; transition:transform .4s cubic-bezier(.16,1,.3,1), background .4s;" style-hover="transform:translateY(-2px); background:#3F6E5A; color:#EEF1EC;" style-active="transform:scale(.97);">Explore the warehouse <span aria-hidden="true">→</span></a>
       </div>
-      <a href="reporting.html" aria-label="Reporting warehouse and dashboards case study" style="flex:1 1 460px; position:relative; display:block; aspect-ratio:5/4; text-decoration:none; color:#15201A;">
-        <div data-speed="-0.06" aria-hidden="true" style="position:absolute; inset:-4%; overflow:hidden; -webkit-mask-image:radial-gradient(ellipse 60% 58% at 50% 50%,#000 30%,transparent 100%); mask-image:radial-gradient(ellipse 60% 58% at 50% 50%,#000 30%,transparent 100%);">
-          <img src="images/valley.jpg" alt="" style="position:absolute; inset:-8% 0; width:100%; height:116%; object-fit:cover; object-position:50% 55%; view-transition-name:report-scene;">
-        </div>
-        <div style="position:absolute; left:14%; right:14%; top:22%; padding:clamp(16px,2vw,26px); border-radius:8px; background:rgba(238,241,236,0.92); backdrop-filter:blur(10px); box-shadow:0 40px 80px -30px rgba(12,22,15,0.55); display:flex; flex-direction:column; gap:10px; transition:transform .6s cubic-bezier(.16,1,.3,1);" style-hover="transform:translateY(-6px);">
-          <span style="font:600 10px/1 'Hanken Grotesk', sans-serif; letter-spacing:0.16em; text-transform:uppercase; color:#3F6E5A;">Conceptual diagram, not a screenshot</span>
-          <span style="display:flex; align-items:center; justify-content:space-between; gap:8px; padding:10px 12px; border-radius:6px; background:#fff; font:500 13px/1.2 'Hanken Grotesk', sans-serif;">Operational records<span style="color:#3F6E5A;">↓</span></span>
-          <span style="display:flex; align-items:center; justify-content:space-between; gap:8px; padding:10px 12px; border-radius:6px; background:#15201A; color:#EEF1EC; font:600 13px/1.2 'Hanken Grotesk', sans-serif;">Reporting warehouse<span style="color:#C9D98A;">↓</span></span>
-          <span style="display:grid; grid-template-columns:1fr 1fr; gap:8px;"><span style="padding:10px 12px; border-radius:6px; background:#fff; font:500 13px/1.2 'Hanken Grotesk', sans-serif;">Dashboards</span><span style="padding:10px 12px; border-radius:6px; background:#fff; font:500 13px/1.2 'Hanken Grotesk', sans-serif;">Explanations</span></span>
-        </div>
+      <a href="reporting.html" class="project-preview warehouse-preview" aria-label="Explore Furniture Bank Data Warehouse" style="flex:1 1 460px;display:block;text-decoration:none;color:#15201A;">
+<div style="position:relative;margin:30px 0"><figure class="warehouse-diagram" style="margin:0" aria-label="Five source systems feed BigQuery, where SQL models support Looker Studio reporting">
+ <div class="sources"><span>Salesforce</span><span>Typeform<small>Python · dlt</small></span><span>FundraiseUp<small>Python · dlt</small></span><span>ActiveCampaign<small>Python · dlt</small></span><span>GA4</span></div>
+ <div class="flow">Extract &amp; Load<br>↓</div>
+ <div class="warehouse"><strong>BigQuery</strong><span>Source Data → SQL Transformations → Reporting Views</span></div>
+ <div class="flow">↓</div><div class="outputs">Looker Studio · Staff Reporting</div>
+ <figcaption>Architecture Overview · Source Systems and Reporting Layers</figcaption></figure></div>
       </a>
     </article>
   </div>
@@ -134,32 +133,19 @@ a:hover{color:inherit}
       </div>
       <a href="music.html" style="align-self:flex-start; font:600 12px/1 'Hanken Grotesk', sans-serif; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; padding:12px 0; border-bottom:1px solid currentColor;">Reviews and interviews →</a>
     </div>
-    <a href="profiles.html" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr)); gap:14px 60px; align-items:baseline; margin-top:clamp(20px,4vw,48px); padding:clamp(28px,4vw,44px) 0; border-top:1px solid rgba(24,36,27,0.16); border-bottom:1px solid rgba(24,36,27,0.16); text-decoration:none; color:#18241B; transition:padding .5s cubic-bezier(.16,1,.3,1);" style-hover="padding-left:16px; color:#18241B;" style-focus="padding-left:16px;">
-      <span style="font:italic 300 clamp(40px,5vw,76px)/1 'Cormorant', serif; letter-spacing:-0.03em;">Profile writing →</span>
-      <span style="display:flex; flex-direction:column; gap:10px;"><span style="font:600 11px/1 'Hanken Grotesk', sans-serif; letter-spacing:0.2em; text-transform:uppercase; color:#8A6A3A;">VIDA Select</span><span style="font:400 18px/1.6 'Hanken Grotesk', sans-serif; color:#3A493E;">Persuasive profiles for premium clients, and later, editing other writers’ profiles.</span></span>
-    </a>
   </div>
 </section>
 
-<section data-tone="dark" data-screen-label="Home end" style="position:relative; overflow:hidden; background:linear-gradient(180deg,#F1F2EC 0,#0E1710 34vh); color:#F1F2EC;">
-  <div data-speed="-0.12" aria-hidden="true" style="position:absolute; inset:0; pointer-events:none; -webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 42%); mask-image:linear-gradient(180deg,transparent 0%,#000 42%);">
-    <img src="images/summit.jpg" alt="" style="width:100%; height:120%; object-fit:cover; object-position:60% 50%; opacity:.8;">
-  </div>
-  <div aria-hidden="true" style="position:absolute; inset:0; background:linear-gradient(90deg,rgba(14,23,16,0.7),rgba(14,23,16,0.1) 70%);"></div>
-  <div style="position:relative; max-width:1480px; margin:0 auto; padding:clamp(220px,28vw,360px) clamp(18px,4vw,52px) 32px; display:flex; flex-direction:column; gap:clamp(48px,7vw,90px);">
-    <div style="display:flex; flex-direction:column; gap:22px;">
-      <h2 data-reveal="" style="margin:0; font:300 clamp(56px,9vw,150px)/0.88 'Cormorant', serif; letter-spacing:-0.04em; text-shadow:0 2px 36px rgba(8,16,10,0.5);">Say <span style="font-style:italic; font-weight:400;">hello</span></h2>
-      <div data-reveal="" data-d="80" style="display:flex; gap:12px; flex-wrap:wrap;">
-        <a href="about.html#contact" style="display:inline-flex; align-items:center; gap:10px; min-height:44px; padding:0 22px; white-space:nowrap; border-radius:999px; background:#F1F2EC; color:#18241B; font:600 12px/1 'Hanken Grotesk', sans-serif; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; transition:transform .4s cubic-bezier(.16,1,.3,1);" style-hover="transform:translateY(-2px); color:#18241B;" style-active="transform:scale(.97);">Contact details</a>
-        <a href="about.html" style="display:inline-flex; align-items:center; gap:10px; min-height:44px; padding:0 22px; white-space:nowrap; border-radius:999px; border:1px solid rgba(241,242,236,0.6); color:#F1F2EC; font:600 12px/1 'Hanken Grotesk', sans-serif; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; transition:transform .4s cubic-bezier(.16,1,.3,1), background .4s;" style-hover="transform:translateY(-2px); background:rgba(241,242,236,0.14); color:#F1F2EC;" style-active="transform:scale(.97);">About me</a>
-      </div>
-    </div>
-    <div style="display:flex; justify-content:space-between; gap:12px 24px; flex-wrap:wrap; padding-top:20px; border-top:1px solid rgba(241,242,236,0.16); font:400 13px/1.6 'Hanken Grotesk', sans-serif; color:rgba(241,242,236,0.8);">
-      <span>Dariya Ostrovska</span>
-      <span style="color:#C9D98A; border:1px dashed #C9D98A; border-radius:999px; padding:1px 10px;">To add: landscape photo credits</span>
-    </div>
+<section id="hello" class="home-contact" data-tone="light" data-screen-label="Contact">
+  <div class="home-contact-inner">
+    <div><p class="eyebrow">Get In Touch</p><h2>Say <em>Hello</em></h2><p class="contact-copy">For work, writing, or a conversation about something I’ve built.</p></div>
+    <div class="contact-actions"><a class="button" href="mailto:dariyaostrovska@gmail.com">Email Me ↗</a><a href="about.html#resume">View Resume ↗</a><a href="about.html">About Me ↗</a></div>
   </div>
 </section>
+<footer class="site-footer" data-tone="light">
+  <div class="footer-main"><a href="index.html">Dariya Ostrovska</a><nav aria-label="Footer"><a href="#work" data-smooth-scroll="">Work</a><a href="music.html">Writing</a><a href="about.html#resume">Résumé</a><a href="about.html#contact">Contact</a></nav></div>
+  <p class="photo-credit">Landscape photograph by Simon Lohmann · Unsplash</p>
+</footer>
 </main>
 </x-dc>
 <script type="text/x-dc" data-dc-script>

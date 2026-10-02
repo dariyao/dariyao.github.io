@@ -1,0 +1,172 @@
+/* A quiet cream introduction, with the landscape along its lower edge. */
+:root { --page-cream: #f4f2eb; }
+body { background: var(--page-cream); }
+.home-hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--page-cream);
+  color: #18241b;
+}
+.hero-content {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: clamp(128px, 15svh, 160px) clamp(24px, 5vw, 64px) 64px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  align-items: center;
+  gap: clamp(40px, 6vw, 88px);
+}
+.hero-name {
+  margin: 0 0 24px;
+  font: 400 clamp(48px, 5.8vw, 80px)/1.12 'Cormorant', serif;
+  letter-spacing: -.035em;
+}
+.hero-name span { font-style: italic; }
+.hero-description {
+  margin: 0;
+  max-width: 47ch;
+  font: 400 clamp(17px, 1.6vw, 20px)/1.65 'Hanken Grotesk', sans-serif;
+  color: #465149;
+  text-wrap: pretty;
+}
+.hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 26px;
+  margin-top: 26px;
+}
+.hero-actions a {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  box-sizing: border-box;
+  min-height: 44px;
+  font: 500 14px/1.2 'Hanken Grotesk', sans-serif;
+  text-decoration: none;
+}
+.hero-primary { padding: 0 22px; border-radius: 999px; background: #263d2d; color: #faf9f7; }
+.hero-primary:hover { background: #3c553b; color: #faf9f7; }
+.hero-secondary { color: #263d2d; }
+.hero-secondary:hover { text-decoration: underline; }
+.hero-portrait {
+  display: block;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.hero-photo {
+  position: relative;
+  height: clamp(300px, 33vw, 520px);
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, rgba(0,0,0,.2) 2%, rgba(0,0,0,.65) 6%, rgba(0,0,0,.94) 10%, #000 14%, #000 62%, rgba(0,0,0,.97) 68%, rgba(0,0,0,.83) 75%, rgba(0,0,0,.56) 82%, rgba(0,0,0,.25) 89%, rgba(0,0,0,.06) 96%, transparent 100%);
+  mask-image: linear-gradient(180deg, transparent 0%, rgba(0,0,0,.2) 2%, rgba(0,0,0,.65) 6%, rgba(0,0,0,.94) 10%, #000 14%, #000 62%, rgba(0,0,0,.97) 68%, rgba(0,0,0,.83) 75%, rgba(0,0,0,.56) 82%, rgba(0,0,0,.25) 89%, rgba(0,0,0,.06) 96%, transparent 100%);
+}
+/* The central opening needs more mist than the higher treeline at the sides. */
+.hero-photo::after {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 25%;
+  pointer-events: none;
+  background: radial-gradient(ellipse 64% 105% at 50% 0%, var(--page-cream) 0%, rgba(244,242,235,.8) 28%, rgba(244,242,235,.32) 57%, rgba(244,242,235,0) 86%);
+}
+.hero-photo picture {
+  display: block;
+  width: 100%;
+  height: calc(100% + 80px);
+  margin-top: -40px;
+}
+.hero-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 65%;
+  filter: saturate(.84);
+}
+/* Bring the section into the photograph's final, nearly transparent mist. */
+#work { margin-top: -48px; }
+@media (prefers-reduced-motion: reduce) {
+  .hero-photo picture { transform: none !important; }
+}
+@media (max-width: 760px) {
+  .hero-content { grid-template-columns: minmax(0, 1fr) 150px; gap: 28px; padding-top: 130px; }
+  .hero-portrait { width: 150px; height: 150px; }
+  .hero-name { font-size: 48px; }
+}
+@media (max-width: 580px) {
+  .hero-content { grid-template-columns: 1fr; gap: 26px; padding: 124px 24px 38px; }
+  .hero-portrait { grid-row: 1; width: 104px; height: 104px; }
+  .hero-name { font-size: clamp(40px, 9vw, 48px); margin-bottom: 20px; }
+  .hero-photo { height: 250px; }
+}
+
+.project-title {
+  margin: 0;
+  font: 400 clamp(36px, 4.2vw, 64px)/1.08 'Cormorant', serif;
+  letter-spacing: -.03em;
+  text-wrap: balance;
+}
+.project-title a { text-decoration: none; transition: color .25s ease; }
+.project-title a:hover { color: #567047; }
+
+.home-contact {
+  position: relative;
+  overflow: hidden;
+  background: var(--page-cream);
+  color: #f1f2ec;
+}
+.contact-landscape {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(180deg, transparent, rgba(0,0,0,.06) 10%, rgba(0,0,0,.32) 24%, rgba(0,0,0,.76) 40%, #000 56%);
+  mask-image: linear-gradient(180deg, transparent, rgba(0,0,0,.06) 10%, rgba(0,0,0,.32) 24%, rgba(0,0,0,.76) 40%, #000 56%);
+}
+.contact-landscape svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  filter: saturate(.85);
+}
+.contact-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(17,28,17,.78), rgba(17,28,17,.36) 50%, rgba(17,28,17,.18)),
+    linear-gradient(0deg, rgba(17,28,17,.50), transparent 60%);
+}
+
+/* The sunlit valley is the default; a long, eased opacity ramp meets cream. */
+.hero-photo {
+  height: clamp(360px, 40vw, 600px);
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, transparent 7%, rgba(0,0,0,.008) 12%, rgba(0,0,0,.045) 18%, rgba(0,0,0,.15) 24%, rgba(0,0,0,.36) 31%, rgba(0,0,0,.66) 38%, rgba(0,0,0,.9) 45%, #000 51%, #000 100%);
+  mask-image: linear-gradient(180deg, transparent 0%, transparent 7%, rgba(0,0,0,.008) 12%, rgba(0,0,0,.045) 18%, rgba(0,0,0,.15) 24%, rgba(0,0,0,.36) 31%, rgba(0,0,0,.66) 38%, rgba(0,0,0,.9) 45%, #000 51%, #000 100%);
+}
+.hero-photo::after { display: none; }
+.hero-scene { height: calc(100% + 100px); margin-top: -50px; will-change: transform; }
+.hero-photo .landscape-photo { display:block; height:100%; margin:0; }
+.hero-photo img { object-position:50% 72%; filter:saturate(.9); }
+#work { margin-top:0; }
+@media(max-width:680px) { .hero-photo { height:340px; } }
+@media(prefers-reduced-motion:reduce) { .hero-scene { transform:none!important; } }
+html[data-preview-scene="canyon"] .hero-photo img { object-position:50% 65%; filter:saturate(.84); }
+html[data-preview-scene="valley"] .hero-photo img { object-position:50% 72%; filter:saturate(.9); }
+
+.home-contact { background:var(--page-cream);color:#18241b;overflow:visible; }
+.home-contact-inner { max-width:1376px;margin:0 auto;padding:64px clamp(18px,4vw,52px) 72px;border-top:1px solid rgba(24,36,27,.14);display:flex;align-items:center;justify-content:space-between;gap:32px; }
+.home-contact h2 { margin:10px 0 20px;font:400 clamp(44px,5vw,72px)/1.05 'Cormorant',serif;letter-spacing:-.025em; }
+.home-contact h2 em { font-weight:400; }
+.contact-copy { margin:0;max-width:42ch;color:#465149;font:400 17px/1.7 'Hanken Grotesk',sans-serif; }
+.contact-actions { display:flex;gap:20px;align-items:center;flex-wrap:wrap;font-size:14px; }
+.site-footer { max-width:1376px;margin:auto;padding:24px clamp(18px,4vw,52px) 28px;border-top:1px solid rgba(24,36,27,.14);color:#465149; }
+.footer-main { display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:13px; }
+.footer-main>a { font:italic 500 23px/1 'Cormorant',serif;text-decoration:none;color:#18241b; }
+.footer-main nav { display:flex;gap:24px;flex-wrap:wrap; }
+.footer-main nav a { text-decoration:none; }
+.photo-credit { font-size:11px;line-height:1.6;margin:28px 0 0;color:#677260; }
+@media(max-width:680px){.home-contact-inner{padding-top:40px;padding-bottom:44px;flex-direction:column;align-items:flex-start}.contact-actions{gap:18px}.footer-main nav{gap:18px}}

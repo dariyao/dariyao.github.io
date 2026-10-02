@@ -1,27 +1,25 @@
 # Portfolio V2
 
-Local working branch: `v2-redesign`.
-
-The local tag `v1-before-redesign-2026-09-30` preserves the original committed site at `de8c1092c083cbd5805759e54f0ab8d2b282d139`. The original checkout is maintained separately and has not been changed.
-
-## Preview
-
-Run `python3 scripts/preview.py`, then open <http://127.0.0.1:4173/>. The browser refreshes after files in `docs/` change. The server binds to this computer only and serves only `docs/`, with directory listings disabled. Keep reference packages, career notes and other private files outside this repository and its document root.
+Dariya Ostrovska’s portfolio: analytics projects, music journalism, profile writing, and résumé.
 
 ## Pages
 
 - `docs/index.html`: Home and selected work
-- `docs/sroi.html`: Calculator case study
-- `docs/reporting.html`: Warehouse and reporting
-- `docs/music.html`: Music journalism
-- `docs/warfield.html`: Interview feature
-- `docs/profiles.html`: Profile writing and editing
-- `docs/about.html`: About, contact and resume
+- `docs/sroi.html`: SROI Forecast Calculator
+- `docs/reporting.html`: Furniture Bank Analytics, with interactive departmental dashboard previews
+- `docs/music.html`: Music Journalism
+- `docs/warfield.html`: Full Justin Warfield interview
+- `docs/profiles.html`: Profile Writing
+- `docs/about.html`: About, contact, and public résumé
 
-The seven pages currently preserve the selected Claude Design export, including its shared `site.js`, `support.js` and `image-slot.js`. Earlier concepts were not imported. Page content and most styling currently live in each HTML file; the exported editor runtime is retained for initial design review and needs replacement before release. Images are in `docs/images/` and `docs/uploads/`. Original V1 assets remain available during migration.
+Dashboard previews use invented demonstration data. They do not contain Furniture Bank’s internal results.
 
-## Publishing
+## Local Preview
 
-The existing GitHub Pages deployment records use `main`, and the live homepage matches `docs/index.html`. The saved Pages source setting still needs confirmation. This V2 branch is local only. Do not push, merge into `main`, or publish without explicit approval of the exact change.
+Run `python3 scripts/preview.py`, then open <http://127.0.0.1:4173/>. The preview refreshes when files change, binds to this computer only, and serves only `docs/` with directory listings disabled. Keep private context outside this repository.
 
-The imported design contains placeholders and assets requiring review. Local preview availability is not release approval. Review content, asset permissions, links, keyboard access, mobile layouts and reduced motion before publication. Do not expose the private review resume as a public download.
+## Versions and Publishing
+
+`V2` is the working branch. The `V1` tag preserves the original portfolio at `de8c1092c083cbd5805759e54f0ab8d2b282d139`.
+
+GitHub Pages publishes the `/docs` folder from `main` at <https://dariyao.github.io/>. Changes are published only after approval.

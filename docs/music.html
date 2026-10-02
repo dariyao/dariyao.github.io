@@ -27,6 +27,25 @@ a{color:inherit;text-decoration-thickness:1px;text-underline-offset:4px}
 a:hover{color:inherit}
 ::selection{background:#F6F4EF;color:#141414}
 :focus-visible{outline:2px solid #F6F4EF;outline-offset:3px;border-radius:4px}
+
+/* A record sleeve and vinyl with room to emerge toward the centre of the page. */
+.music-review>div{gap:clamp(28px,4vw,64px)!important;padding-top:clamp(70px,8vw,120px)!important;padding-bottom:clamp(70px,8vw,120px)!important}
+.record-stage{isolation:isolate;box-sizing:border-box;aspect-ratio:1.2/1;display:flex;align-items:center}
+.record-cover{width:70%;flex:none;border-radius:6px!important;transform:rotate(-1.2deg);border:1px solid rgba(255,255,255,.25);box-shadow:0 22px 55px rgba(0,0,0,.32),0 1px 2px rgba(255,255,255,.12)!important}
+.record-stage[data-side=row-reverse] .record-cover{margin-left:auto;transform:rotate(1.2deg)}
+.record-stage [data-vinyl]{inset:auto!important;left:3%!important;top:50%!important;margin-top:-36%;width:72%;aspect-ratio:1/1;box-sizing:border-box;border:1px solid #4d4d4d;background:repeating-radial-gradient(circle at center,#151515 0 1px,#242424 1px 2px,#101010 2px 4px)!important;box-shadow:0 18px 32px rgba(0,0,0,.4),inset 0 0 0 5px #161616,inset 0 0 0 7px #383838!important}
+.record-stage[data-side=row-reverse] [data-vinyl]{left:25%!important}
+.record-stage [data-vinyl]>div:first-child{background:conic-gradient(from 15deg,transparent 0deg,rgba(255,255,255,.16) 40deg,transparent 75deg,transparent 180deg,rgba(255,255,255,.11) 225deg,transparent 265deg)!important}
+.record-stage [data-vinyl]>div:nth-child(2){inset:32%!important;box-shadow:0 0 0 4px #181818,0 0 0 5px #4a4a4a;filter:saturate(.8)}
+.review-quote{margin:8px 0 0;font:300 clamp(24px,2.25vw,32px)/1.4 'Cormorant',serif;max-width:27em;text-wrap:pretty;color:#f6f4ef}
+.review-quote cite{display:block;margin-top:14px;font:400 13px/1.5 'Hanken Grotesk',sans-serif;letter-spacing:.03em;opacity:.75}
+.review-quote cite:empty{display:none}
+.music-review h2>span:last-child{font-size:clamp(40px,4.8vw,72px)!important;line-height:1.06!important}
+@media(max-width:780px){.music-review>div{gap:32px!important}.record-stage{flex-basis:100%!important;max-width:520px!important;margin-inline:auto}.review-quote{font-size:27px}.music-review h2>span:last-child{font-size:50px!important}}
+@media(prefers-reduced-motion:reduce){.record-cover,.record-stage [data-vinyl]{transition:none!important}.record-cover{transform:none!important}}
+
+
+#writing-end>div{padding-top:48px!important;padding-bottom:64px!important;border-top:1px solid rgba(246,244,239,.18);margin-inline:clamp(18px,4vw,52px)!important;padding-inline:0!important}
 </style>
 </helmet>
 
@@ -57,10 +76,10 @@ a:hover{color:inherit}
     <div style="max-width:1480px; width:100%; margin:0 auto; padding:120px clamp(18px,4vw,52px) clamp(60px,8vw,110px); box-sizing:border-box; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr)); gap:clamp(36px,6vw,96px); align-items:center;">
       <div style="display:flex; flex-direction:column; gap:24px;">
       <nav aria-label="Writing" data-reveal="" style="display:flex; gap:22px; flex-wrap:wrap; font:500 14px/1 'Hanken Grotesk', sans-serif;">
-        <a href="music.html" aria-current="page" style="padding:10px 0; text-decoration:none; border-bottom:1px solid #F6F4EF; color:#F6F4EF; transition:color .3s;" style-hover="color:#F6F4EF;">Music journalism</a>
-        <a href="profiles.html" style="padding:10px 0; text-decoration:none; border-bottom:1px solid transparent; color:rgba(246,244,239,0.72); transition:color .3s;" style-hover="color:#F6F4EF;">Profile writing</a>
+        <a href="music.html" aria-current="page" style="padding:10px 0; text-decoration:none; border-bottom:1px solid #F6F4EF; color:#F6F4EF; transition:color .3s;" style-hover="color:#F6F4EF;">Music Journalism</a>
+        <a href="profiles.html" style="padding:10px 0; text-decoration:none; border-bottom:1px solid transparent; color:rgba(246,244,239,0.72); transition:color .3s;" style-hover="color:#F6F4EF;">Profile Writing</a>
       </nav>
-        <p data-reveal="" style="margin:0; font:600 11px/1.5 'Hanken Grotesk', sans-serif; letter-spacing:0.2em; text-transform:uppercase; opacity:.85;">Music journalism · The Spill Magazine, 2022–2023</p>
+        <p data-reveal="" style="margin:0; font:600 11px/1.5 'Hanken Grotesk', sans-serif; letter-spacing:0.2em; text-transform:uppercase; opacity:.85;">Music Journalism · The Spill Magazine, 2022–2023</p>
         <h1 data-reveal="" data-d="100" style="margin:0; font:italic 300 clamp(40px,5.4vw,84px)/1.02 'Cormorant', serif; letter-spacing:-0.025em; text-wrap:balance;">“I like the idea of being included in a part of something, more than making myself the focal point.”</h1>
         <p data-reveal="" data-d="200" style="margin:0; font:400 18px/1.6 'Hanken Grotesk', sans-serif; max-width:34em; opacity:.92;">My conversation with Justin Warfield of She Wants Revenge, about a commissioned song, the rules the band once set for itself, and what happens when you drop them.</p>
         <a data-reveal="" data-d="300" href="warfield.html" style="align-self:flex-start; display:inline-flex; gap:14px; align-items:center; padding:16px 24px; border-radius:999px; background:#F6F4EF; color:#141414; font:600 12px/1 'Hanken Grotesk', sans-serif; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; white-space:nowrap;">Read the feature <span aria-hidden="true">→</span></a>
@@ -73,29 +92,23 @@ a:hover{color:inherit}
     </div>
   </section>
 
-  <section data-tone="dark" data-screen-label="Reviews intro">
-    <div style="max-width:1480px; margin:0 auto; padding:clamp(40px,6vw,80px) clamp(18px,4vw,52px) 0;">
-      <p data-reveal="" style="margin:0; font:300 clamp(28px,3vw,44px)/1.25 'Cormorant', serif; max-width:30ch; text-wrap:pretty;">Reviews, mostly of records that asked for close listening. The scores are Spill’s ten-point ratings.</p>
-    </div>
-  </section>
-
-  <sc-for list="{{ reviews }}" as="r" hint-placeholder-count="0">
-    <section id="{{ r.key }}" data-tone="dark" data-art="{{ r.key }}" style="scroll-margin-top:40px; overflow-x:clip;">
+<sc-for list="{{ reviews }}" as="r" hint-placeholder-count="0">
+    <section class="music-review" id="{{ r.key }}" data-tone="dark" data-art="{{ r.key }}" style="scroll-margin-top:90px;">
       <div style="max-width:1480px; margin:0 auto; padding:clamp(80px,10vw,150px) clamp(18px,4vw,52px); display:flex; flex-wrap:wrap; gap:clamp(36px,6vw,96px); align-items:center; flex-direction:{{ r.dir }};">
-        <div style="position:relative; flex:1 1 360px; max-width:620px;">
+        <div class="record-stage" data-side="{{ r.dir }}" style="position:relative; flex:1 1 360px; max-width:620px;">
           <div data-vinyl="{{ r.vdir }}" aria-hidden="true" style="position:absolute; inset:3%; border-radius:50%; display:{{ r.vinylDisp }}; background:repeating-radial-gradient(circle at 50% 50%,#0c0c0c 0 1.6px,#1d1d1d 1.6px 3.2px); box-shadow:0 30px 60px -20px rgba(0,0,0,0.7); transition:transform 1.8s cubic-bezier(.16,1,.3,1);">
             <div style="position:absolute; inset:0; border-radius:50%; background:linear-gradient(125deg,rgba(255,255,255,0.1),rgba(255,255,255,0) 40%,rgba(255,255,255,0.06) 60%,rgba(255,255,255,0));"></div>
             <div style="position:absolute; inset:35%; border-radius:50%; background-size:cover; background-position:center; background-image:{{ r.label }};"></div>
             <div style="position:absolute; left:50%; top:50%; width:2.4%; height:2.4%; transform:translate(-50%,-50%); border-radius:50%; background:#141414;"></div>
           </div>
-          <a href="{{ r.href }}" target="_blank" rel="noopener" aria-label="{{ r.aria }}" style="position:relative; z-index:1; view-transition-name:{{ r.vt }}; display:block; aspect-ratio:1/1; overflow:hidden; border-radius:4px; box-shadow:0 50px 100px -40px rgba(0,0,0,0.7); transition:transform 1.2s cubic-bezier(.16,1,.3,1), box-shadow 1.2s;" style-hover="transform:scale(1.015) rotate(-0.6deg); box-shadow:0 70px 120px -40px rgba(0,0,0,0.8);" style-active="transform:scale(0.99);">
+          <a class="record-cover" href="{{ r.href }}" target="_blank" rel="noopener" aria-label="{{ r.aria }}" style="position:relative; z-index:1; view-transition-name:{{ r.vt }}; display:block; aspect-ratio:1/1; overflow:hidden; border-radius:4px; box-shadow:0 50px 100px -40px rgba(0,0,0,0.7); transition:transform 1.2s cubic-bezier(.16,1,.3,1), box-shadow 1.2s;" style-hover="transform:scale(1.015) rotate(-0.6deg); box-shadow:0 70px 120px -40px rgba(0,0,0,0.8);" style-active="transform:scale(0.99);">
           <img src="{{ r.img }}" alt="{{ r.alt }}" loading="lazy" decoding="async" style="width:100%; height:100%; object-fit:cover; display:block;">
         </a>
         </div>
         <div style="flex:1 1 360px; display:flex; flex-direction:column; gap:20px;">
           <p style="margin:0; display:flex; gap:14px; flex-wrap:wrap; font:600 11px/1.5 'Hanken Grotesk', sans-serif; letter-spacing:0.18em; text-transform:uppercase; opacity:.85;"><span>{{ r.kind }}</span><span>{{ r.date }}</span><span>{{ r.badge }}</span></p>
           <h2 style="margin:0; display:flex; flex-direction:column; gap:6px;"><span style="font:500 clamp(22px,2vw,28px)/1.1 'Hanken Grotesk', sans-serif; letter-spacing:-0.01em;">{{ r.artist }}</span><span style="font:italic 300 clamp(44px,5.4vw,84px)/0.98 'Cormorant', serif; letter-spacing:-0.03em;">{{ r.title }}</span></h2>
-          <blockquote style="margin:6px 0 0; font:300 clamp(24px,2.3vw,34px)/1.3 'Cormorant', serif; max-width:26em; text-wrap:pretty;">{{ r.excerpt }}</blockquote>
+          <blockquote class="review-quote"><span>{{ r.quoteLead }}</span><em>{{ r.quoteAlbum }}</em><span>{{ r.excerpt }}</span><cite>{{ r.attribution }}</cite></blockquote>
           <div style="display:flex; gap:18px 28px; align-items:center; flex-wrap:wrap; margin-top:6px;">
             <span style="font:500 14px/1.4 'Hanken Grotesk', sans-serif; opacity:.8;">{{ r.meta }}</span>
             <a href="{{ r.href }}" target="_blank" rel="noopener" style="font:600 12px/1 'Hanken Grotesk', sans-serif; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; padding:8px 0; border-bottom:1px solid currentColor; white-space:nowrap;">Read on The Spill ↗</a>
@@ -105,15 +118,14 @@ a:hover{color:inherit}
     </section>
   </sc-for>
 
-  <section data-tone="light" data-art="end" data-screen-label="Music end" style="color:#18241B; background:linear-gradient(180deg,rgba(241,242,236,0),#F1F2EC 35%);">
+  <section id="writing-end" data-tone="dark" data-art="widowspeak" data-screen-label="Music end" style="color:#F6F4EF;">
     <div style="max-width:1480px; margin:0 auto; padding:clamp(120px,16vw,220px) clamp(18px,4vw,52px) clamp(80px,10vw,140px); display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr)); gap:40px; align-items:end;">
       <div style="display:flex; flex-direction:column; gap:18px;">
-        <p style="margin:0; font:300 clamp(30px,3.4vw,50px)/1.15 'Cormorant', serif; max-width:22ch;">That’s a selection. The rest are on my author page.</p>
         <a href="https://spillmagazine.com/author/dariya-ostrovska/" target="_blank" rel="noopener" style="align-self:flex-start; font:600 12px/1 'Hanken Grotesk', sans-serif; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; padding:8px 0; border-bottom:1px solid currentColor;">All bylines on The Spill ↗</a>
       </div>
       <a href="profiles.html" style="justify-self:end; display:flex; flex-direction:column; gap:10px; text-align:right; text-decoration:none; transition:transform .8s cubic-bezier(.16,1,.3,1);" style-hover="transform:translateX(6px);">
-        <span style="font:600 11px/1 'Hanken Grotesk', sans-serif; letter-spacing:0.2em; text-transform:uppercase; color:#4B6B34;">Next</span>
-        <span style="font:italic 300 clamp(40px,4.6vw,72px)/1 'Cormorant', serif;">Profile writing →</span>
+        <span style="font:600 11px/1 'Hanken Grotesk', sans-serif; letter-spacing:0.2em; text-transform:uppercase; color:rgba(246,244,239,.72);">Next</span>
+        <span style="font:italic 300 clamp(40px,4.6vw,72px)/1 'Cormorant', serif;">Profile Writing →</span>
       </a>
     </div>
   </section>
@@ -130,15 +142,15 @@ class Component extends DCLogic {
     const u = 'https://spillmagazine.com/wp-content/uploads/';
     const s = 'https://spillmagazine.com/';
     const reviews = [
-      { key: 'riff', kind: 'Live review', date: 'August 2023', badge: '', artist: 'Hurray for the Riff Raff', title: 'The Pink Room, Manchester', excerpt: '“By then few people had their cameras out, in fact it felt like the room held its breath for every word Segarra sang.”', meta: 'YES, Manchester · Support: Katie Malco', img: u + '2023/08/Hurray-For-The-Riff-Raff-790x790.jpg', href: s + 'spill-live-review-hurray-for-the-riff-raff-the-pink-room-yes-manchester/' },
-      { key: 'pj', kind: 'Album review', date: 'November 2022', badge: 'Editor Pick', artist: 'PJ Harvey', title: 'B-Sides, Demos & Rarities', excerpt: '“A road map to her as an artist, as well as a person.” A 2001 performance of “Somebody’s Down, Somebody’s Name” had her delivering the lines as though they were prose.', meta: 'Universal Music / Island · 9.0', img: u + '2022/12/PJ-Harvey.jpg', href: s + 'spill-album-review-pj-harvey-b-sides-demos-rarities/' },
-      { key: 'carla', kind: 'Album review', date: 'November 2022', badge: '', artist: 'Carla dal Forno', title: 'Come Around', excerpt: '“As though you’ve opened a leather bound, gently discoloured by time, fairy tale novel.”', meta: 'Kallista Records · 8.0', img: u + '2023/01/Carla-dal-Forno.jpg', href: s + 'spill-album-review-carla-dal-forno-come-around/' },
-      { key: 'krivchenia', kind: 'Album review', date: 'April 2022', badge: 'Editor Pick', artist: 'James Krivchenia', title: 'Blood Karaoke', excerpt: '“From duck pond sounds, to sci-fi noises, to wind chimes, there’s a familiarity to each note.”', meta: 'Reading Group · 9.0', img: u + '2022/06/James-Krivchenia.jpg', href: s + 'spill-album-review-james-krivchenia-blood-karaoke/' },
-      { key: 'widowspeak', kind: 'Album review', date: 'March 2022', badge: '', artist: 'Widowspeak', title: 'The Jacket', excerpt: '“A peek into the heart of the band, filled with a dreamy vulnerability.”', meta: 'Captured Tracks · 8.0', img: u + '2022/06/Widowspeak.jpg', href: s + 'spill-album-review-widowspeak-the-jacket/' },
-    ].map((r, i) => ({ ...r, dir: i % 2 ? 'row-reverse' : 'row', vdir: i % 2 ? -1 : 1, vinylDisp: r.kind === 'Album review' ? 'block' : 'none', label: `url("${r.img}")`, vt: 'cover-' + r.key, alt: `${r.artist}, ${r.title}`, aria: `${r.artist}, ${r.title}, on The Spill Magazine` }));
+      { key: 'riff', kind: 'Live review', date: 'August 2023', badge: '', artist: 'Hurray for the Riff Raff', title: 'The Pink Room, Manchester', excerpt: "“You might notice that we’re sitting down. That’s because we sound better sitting down.”", meta: 'YES, Manchester · Support: Katie Malco', img: u + '2023/08/Hurray-For-The-Riff-Raff-790x790.jpg', href: s + 'spill-live-review-hurray-for-the-riff-raff-the-pink-room-yes-manchester/' },
+      { key: 'pj', kind: 'Album review', date: 'November 2022', badge: 'Editor Pick', artist: 'PJ Harvey', title: 'B-Sides, Demos & Rarities', excerpt: "“In true PJ Harvey nature, each track is physical, from the gentle drumming in “Who Will Love Me Now?” to the hypnotic build-up of the guitar in “Somebody’s Down, Somebody’s Name””", meta: 'Universal Music / Island · 9.0', img: u + '2022/12/PJ-Harvey.jpg', href: s + 'spill-album-review-pj-harvey-b-sides-demos-rarities/' },
+      { key: 'carla', kind: 'Album review', date: 'November 2022', badge: '', artist: 'Carla dal Forno', title: 'Come Around', excerpt: "“The songs explore a search—the kind that seems to be constant. Lines feel reminiscent of walking in circles, coming back to yourself again and again.”", meta: 'Kallista Records · 8.0', img: u + '2023/01/Carla-dal-Forno.jpg', href: s + 'spill-album-review-carla-dal-forno-come-around/' },
+      { key: 'krivchenia', kind: 'Album review', date: 'April 2022', badge: 'Editor Pick', artist: 'James Krivchenia', title: 'Blood Karaoke', excerpt: " may not be the album to do much to, everything is happening in it, all at the same time, which if you ignore the inevitable anxiety of listening, you can also appreciate it for its detached eccentricity.”", meta: 'Reading Group · 9.0', img: u + '2022/06/James-Krivchenia.jpg', href: s + 'spill-album-review-james-krivchenia-blood-karaoke/' },
+      { key: 'widowspeak', kind: 'Album review', date: 'March 2022', badge: '', artist: 'Widowspeak', title: 'The Jacket', excerpt: "“The consistency of the vocals are reminiscent of the lens through which these stories are told, with acceptance for their reality, while the changing instrumentals are representative of the various environments being remembered.”", meta: 'Captured Tracks · 8.0', img: u + '2022/06/Widowspeak.jpg', href: s + 'spill-album-review-widowspeak-the-jacket/' },
+    ].map((r, i) => ({ ...r, quoteLead: r.key === 'krivchenia' ? '“' : '', quoteAlbum: r.key === 'krivchenia' ? 'Blood Karaoke' : '', attribution: r.key === 'riff' ? '— Howe Pearson' : '', dir: i % 2 ? 'row-reverse' : 'row', vdir: i % 2 ? -1 : 1, vinylDisp: 'block', label: `url("${r.img}")`, vt: 'cover-' + r.key, alt: `${r.artist}, ${r.title}`, aria: `${r.artist}, ${r.title}, on The Spill Magazine` }));
     const layers = [{ key: 'w', src: u + '2022/06/Warfield-790x790.jpg' }, ...reviews.map(r => ({ key: r.key, src: r.img }))]
       .map((l, i) => ({ ...l, op: i === 0 ? 1 : 0, bg: `url("${l.src}")`, tint: 'rgba(10,10,10,0.36)' }))
-      .concat([{ key: 'end', src: '', op: 0, bg: 'none', tint: '#F1F2EC' }]);
+      ;
     return { reviews, layers };
   }
 }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>SROI Calculator | Dariya Ostrovska</title>
+<title>SROI Forecast Calculator | Dariya Ostrovska</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="./support.js"></script>
@@ -29,6 +29,7 @@ a:hover{color:inherit}
 ::selection{background:#C9D98A;color:#18241B}
 :focus-visible{outline:2px solid #4B6B34;outline-offset:3px;border-radius:4px}
 </style>
+<link rel="stylesheet" href="editorial.css">
 </helmet>
 
 <header data-site-header="" style="position:fixed; top:0; left:0; right:0; z-index:100; view-transition-name:site-header; color:#F1F2EC; transition:background .5s, color .5s, box-shadow .5s;">
@@ -45,99 +46,10 @@ a:hover{color:inherit}
   </div>
 </header>
 
-<main id="main">
-<section data-tone="dark" data-screen-label="SROI opener" style="position:relative; height:clamp(300px,46vh,480px); overflow:hidden; background:#0E1710; color:#F1F2EC; display:flex; align-items:flex-end;">
-  <div data-speed="-0.18" aria-hidden="true" style="position:absolute; inset:-8% 0;">
-    <img src="images/forest.jpg" alt="" style="width:100%; height:100%; object-fit:cover; object-position:50% 35%; display:block; view-transition-name:sroi-scene;">
-  </div>
-  <div aria-hidden="true" style="position:absolute; inset:0; background:linear-gradient(180deg,rgba(14,23,16,0.5) 0%,rgba(14,23,16,0.25) 40%,rgba(14,23,16,0.7) 100%);"></div>
-  <div style="position:relative; max-width:1320px; width:100%; margin:0 auto; padding:120px clamp(18px,4vw,52px) clamp(28px,4vw,48px); box-sizing:border-box; display:flex; flex-direction:column; gap:16px;">
-    <a data-reveal="" href="index.html#work" style="align-self:flex-start; font:600 11px/1 'Hanken Grotesk', sans-serif; letter-spacing:0.2em; text-transform:uppercase; text-decoration:none; padding:8px 0; color:#C9D98A;">← Work</a>
-    <h1 data-reveal="" data-d="60" style="margin:0; font:300 clamp(40px,5.6vw,88px)/0.98 'Cormorant', serif; letter-spacing:-0.03em; max-width:18ch; text-wrap:balance;">An online calculator for forecasting <span style="font-style:italic;">social return on investment</span></h1>
-  </div>
-</section>
-
-<section data-tone="light" data-screen-label="SROI summary">
-  <div style="max-width:1320px; margin:0 auto; padding:clamp(28px,4vw,48px) clamp(18px,4vw,52px) clamp(56px,7vw,96px); display:flex; flex-wrap:wrap; gap:28px clamp(32px,6vw,90px); align-items:flex-start;">
-    <dl data-reveal="" style="flex:2 1 520px; margin:0; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr)); gap:22px 36px;">
-      <div style="display:flex; flex-direction:column; gap:8px; padding-top:14px; border-top:2px solid #18241B;"><dt style="font:600 11px/1 'Hanken Grotesk', sans-serif; letter-spacing:0.16em; text-transform:uppercase; color:#4B6B34;">What I built</dt><dd style="margin:0; font:400 17px/1.5 'Hanken Grotesk', sans-serif;">An online calculator that applies an existing SROI methodology</dd></div>
-      <div style="display:flex; flex-direction:column; gap:8px; padding-top:14px; border-top:2px solid #18241B;"><dt style="font:600 11px/1 'Hanken Grotesk', sans-serif; letter-spacing:0.16em; text-transform:uppercase; color:#4B6B34;">My role</dt><dd style="margin:0; font:400 17px/1.5 'Hanken Grotesk', sans-serif;">Translating the methodology into the calculator and building it</dd></div>
-      <div style="display:flex; flex-direction:column; gap:8px; padding-top:14px; border-top:2px solid #18241B;"><dt style="font:600 11px/1 'Hanken Grotesk', sans-serif; letter-spacing:0.16em; text-transform:uppercase; color:#4B6B34;">Methodology</dt><dd style="margin:0; font:400 17px/1.5 'Hanken Grotesk', sans-serif;">Melek De-Wint</dd></div>
-      <div style="display:flex; flex-direction:column; gap:8px; padding-top:14px; border-top:2px solid #18241B;"><dt style="font:600 11px/1 'Hanken Grotesk', sans-serif; letter-spacing:0.16em; text-transform:uppercase; color:#4B6B34;">Output</dt><dd style="margin:0; font:400 17px/1.5 'Hanken Grotesk', sans-serif;">A forecast, not measured impact</dd></div>
-    </dl>
-    <div data-reveal="" data-d="80" style="flex:1 1 260px; display:flex; flex-direction:column; gap:12px; align-items:flex-start;">
-      <a href="#" style="display:inline-flex; gap:12px; align-items:center; min-height:48px; padding:0 26px; white-space:nowrap; border-radius:999px; background:#18241B; color:#F1F2EC; font:600 12px/1 'Hanken Grotesk', sans-serif; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; white-space:nowrap; transition:transform .4s cubic-bezier(.16,1,.3,1), background .4s;" style-hover="transform:translateY(-2px); background:#3C5A2A; color:#F1F2EC;" style-active="transform:scale(.97);">Open the calculator ↗</a>
-      <span style="font:600 10px/1.3 'Hanken Grotesk', sans-serif; letter-spacing:0.12em; text-transform:uppercase; color:#4B6B34; border:1px dashed #4B6B34; border-radius:999px; padding:5px 10px;">To add: live link · confirm role wording</span>
-    </div>
-  </div>
-</section>
-
-<section data-tone="light" data-screen-label="SROI product visual" style="background:linear-gradient(180deg,#F1F2EC,#E6EADF 60%,#F1F2EC);">
-  <div style="max-width:1320px; margin:0 auto; padding:0 clamp(18px,4vw,52px) clamp(80px,10vw,140px); display:flex; flex-wrap:wrap; gap:clamp(24px,4vw,56px); align-items:flex-end;">
-    <figure data-reveal="img" style="flex:3 1 560px; margin:0; display:flex; flex-direction:column; gap:12px;">
-      <div style="position:relative; aspect-ratio:16/10; border-radius:10px; overflow:hidden; background:#DDE3D7; box-shadow:0 50px 100px -50px rgba(24,36,27,0.55), 0 0 0 1px rgba(24,36,27,0.06);">
-        <image-slot id="sroi-screenshot" shape="rect" placeholder="Screenshot of the calculator" style="position:absolute; inset:0; width:100%; height:100%; color:#18241B;"></image-slot>
-      </div>
-      <figcaption style="font:500 13px/1.5 'Hanken Grotesk', sans-serif; color:#4E5E53;">The calculator. <span style="color:#4B6B34; border:1px dashed #4B6B34; border-radius:999px; padding:1px 8px; font-size:11px;">To add: approved screenshot</span></figcaption>
-    </figure>
-    <div data-reveal="" data-d="80" style="flex:1 1 240px; display:flex; flex-direction:column; gap:14px; padding-bottom:40px;">
-      <span aria-hidden="true" style="white-space:nowrap; font:200 clamp(72px,8vw,120px)/0.85 'Hanken Grotesk', sans-serif; letter-spacing:-0.06em;"><span style="opacity:.35;">_</span><span style="font:italic 300 0.8em/1 'Cormorant', serif; color:#6E8F3A;"> : </span>1</span>
-      <p style="margin:0; font:400 16px/1.6 'Hanken Grotesk', sans-serif; color:#3A493E; max-width:26em;">SROI is usually written as a ratio: the estimated social value created for every dollar invested.</p>
-    </div>
-  </div>
-</section>
-
-<section data-tone="light" data-screen-label="SROI case study">
-  <div style="max-width:1320px; margin:0 auto; padding:0 clamp(18px,4vw,52px) clamp(80px,10vw,140px); display:flex; flex-direction:column;">
-    <nav aria-label="On this page" style="display:flex; gap:8px 22px; flex-wrap:wrap; padding-bottom:28px; font:500 13px/1 'Hanken Grotesk', sans-serif; color:#4E5E53;">
-      <a href="#problem" style="text-decoration:none; padding:8px 0;" style-hover="color:#18241B; text-decoration:underline;">Problem</a>
-      <a href="#implementation" style="text-decoration:none; padding:8px 0;" style-hover="color:#18241B; text-decoration:underline;">Implementation</a>
-      <a href="#decisions" style="text-decoration:none; padding:8px 0;" style-hover="color:#18241B; text-decoration:underline;">Decisions</a>
-      <a href="#verification" style="text-decoration:none; padding:8px 0;" style-hover="color:#18241B; text-decoration:underline;">Verification</a>
-      <a href="#status" style="text-decoration:none; padding:8px 0;" style-hover="color:#18241B; text-decoration:underline;">Status</a>
-    </nav>
-    <section id="problem" style="scroll-margin-top:90px; display:flex; flex-wrap:wrap; gap:16px clamp(32px,6vw,90px); padding:clamp(36px,5vw,60px) 0; border-top:1px solid rgba(24,36,27,0.18);">
-      <h2 style="flex:1 1 240px; margin:0; display:flex; gap:14px; align-items:baseline; font:300 clamp(32px,3.2vw,48px)/1 'Cormorant', serif;"><span style="font:600 12px/1 'Hanken Grotesk', sans-serif; color:#4B6B34;">01</span>Problem</h2>
-      <div data-reveal="" style="flex:2 1 440px; display:flex; flex-direction:column; gap:16px; font:400 19px/1.7 'Hanken Grotesk', sans-serif; color:#2E3D33; text-wrap:pretty;">
-        <p style="margin:0;">Melek De-Wint had already developed a methodology for estimating social return on investment. It needed a form people could use without working through the method by hand.</p>
-        <span style="align-self:flex-start; font:600 10px/1.3 'Hanken Grotesk', sans-serif; letter-spacing:0.12em; text-transform:uppercase; color:#4B6B34; border:1px dashed #4B6B34; border-radius:999px; padding:5px 10px;">To add: who uses it and what they needed</span>
-      </div>
-    </section>
-    <section id="implementation" style="scroll-margin-top:90px; display:flex; flex-wrap:wrap; gap:16px clamp(32px,6vw,90px); padding:clamp(36px,5vw,60px) 0; border-top:1px solid rgba(24,36,27,0.18);">
-      <h2 style="flex:1 1 240px; margin:0; display:flex; gap:14px; align-items:baseline; font:300 clamp(32px,3.2vw,48px)/1 'Cormorant', serif;"><span style="font:600 12px/1 'Hanken Grotesk', sans-serif; color:#4B6B34;">02</span>Implementation</h2>
-      <div data-reveal="" style="flex:2 1 440px; display:flex; flex-direction:column; gap:16px; font:400 19px/1.7 'Hanken Grotesk', sans-serif; color:#2E3D33;">
-        <span style="align-self:flex-start; font:600 10px/1.3 'Hanken Grotesk', sans-serif; letter-spacing:0.12em; text-transform:uppercase; color:#4B6B34; border:1px dashed #4B6B34; border-radius:999px; padding:5px 10px;">To add: tools used, how inputs are structured, how the formulas were carried over</span>
-      </div>
-    </section>
-    <section id="decisions" style="scroll-margin-top:90px; display:flex; flex-wrap:wrap; gap:16px clamp(32px,6vw,90px); padding:clamp(36px,5vw,60px) 0; border-top:1px solid rgba(24,36,27,0.18);">
-      <h2 style="flex:1 1 240px; margin:0; display:flex; gap:14px; align-items:baseline; font:300 clamp(32px,3.2vw,48px)/1 'Cormorant', serif;"><span style="font:600 12px/1 'Hanken Grotesk', sans-serif; color:#4B6B34;">03</span>Important decisions</h2>
-      <div data-reveal="" style="flex:2 1 440px; display:flex; flex-direction:column; gap:16px; font:400 19px/1.7 'Hanken Grotesk', sans-serif; color:#2E3D33; text-wrap:pretty;">
-        <p style="margin:0;">The methodology is Melek’s; the calculator is a translation of it. And the number it produces is a forecast, not a measurement of impact that has happened.</p>
-        <span style="align-self:flex-start; font:600 10px/1.3 'Hanken Grotesk', sans-serif; letter-spacing:0.12em; text-transform:uppercase; color:#4B6B34; border:1px dashed #4B6B34; border-radius:999px; padding:5px 10px;">To add: the choices you made to keep both clear to users</span>
-      </div>
-    </section>
-    <section id="verification" style="scroll-margin-top:90px; display:flex; flex-wrap:wrap; gap:16px clamp(32px,6vw,90px); padding:clamp(36px,5vw,60px) 0; border-top:1px solid rgba(24,36,27,0.18);">
-      <h2 style="flex:1 1 240px; margin:0; display:flex; gap:14px; align-items:baseline; font:300 clamp(32px,3.2vw,48px)/1 'Cormorant', serif;"><span style="font:600 12px/1 'Hanken Grotesk', sans-serif; color:#4B6B34;">04</span>Verification</h2>
-      <div data-reveal="" style="flex:2 1 440px; display:flex; flex-direction:column; gap:16px;">
-        <span style="align-self:flex-start; font:600 10px/1.3 'Hanken Grotesk', sans-serif; letter-spacing:0.12em; text-transform:uppercase; color:#4B6B34; border:1px dashed #4B6B34; border-radius:999px; padding:5px 10px;">To add: how you checked the calculator against the original methodology</span>
-      </div>
-    </section>
-    <section id="status" style="scroll-margin-top:90px; display:flex; flex-wrap:wrap; gap:16px clamp(32px,6vw,90px); padding:clamp(36px,5vw,60px) 0; border-top:1px solid rgba(24,36,27,0.18); border-bottom:1px solid rgba(24,36,27,0.18);">
-      <h2 style="flex:1 1 240px; margin:0; display:flex; gap:14px; align-items:baseline; font:300 clamp(32px,3.2vw,48px)/1 'Cormorant', serif;"><span style="font:600 12px/1 'Hanken Grotesk', sans-serif; color:#4B6B34;">05</span>Current status</h2>
-      <div data-reveal="" style="flex:2 1 440px; display:flex; flex-direction:column; gap:16px;">
-        <span style="align-self:flex-start; font:600 10px/1.3 'Hanken Grotesk', sans-serif; letter-spacing:0.12em; text-transform:uppercase; color:#4B6B34; border:1px dashed #4B6B34; border-radius:999px; padding:5px 10px;">To add: live, internal, or in development</span>
-      </div>
-    </section>
-  </div>
-</section>
-
-<section data-tone="light" data-screen-label="SROI next">
-  <div style="max-width:1320px; margin:0 auto; padding:0 clamp(18px,4vw,52px) clamp(60px,8vw,110px); display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap;">
-    <a href="index.html#work" style="display:flex; flex-direction:column; gap:10px; text-decoration:none; transition:transform .4s cubic-bezier(.16,1,.3,1);" style-hover="transform:translateX(-4px);"><span style="font:600 11px/1 'Hanken Grotesk', sans-serif; letter-spacing:0.2em; text-transform:uppercase; color:#4B6B34;">Back to</span><span style="font:italic 300 clamp(30px,3.4vw,52px)/1 'Cormorant', serif;">← Work</span></a>
-    <a href="reporting.html" style="display:flex; flex-direction:column; gap:10px; text-align:right; text-decoration:none; transition:transform .4s cubic-bezier(.16,1,.3,1);" style-hover="transform:translateX(4px);"><span style="font:600 11px/1 'Hanken Grotesk', sans-serif; letter-spacing:0.2em; text-transform:uppercase; color:#4B6B34;">Next project</span><span style="font:italic 300 clamp(30px,3.4vw,52px)/1 'Cormorant', serif;">Reporting warehouse →</span></a>
-  </div>
-</section>
-</main>
+<main id="main"><section class="case-hero sroi-hero" data-tone="dark"><div class="scene" aria-hidden="true"><img src="images/green-canopy.jpg" alt="" width="5712" height="4284" fetchpriority="high"></div><div class="shade"></div><div class="hero-copy"><a href="index.html#work">← Selected work</a><h1>SROI Forecast Calculator</h1></div></section>
+<div class="editorial case-body"><div class="intro sroi-opening"><div><p class="eyebrow">Furniture Bank · Public Forecast Tool</p><p class="lead">For furniture banks, there's a big difference between saying we furnished this many homes and diverted this much from landfill and understanding what that actually meant for the people, communities, and environment involved. And a furniture bank shouldn't need a huge budget every time a funder asks it to demonstrate that impact.</p><div class="link-row"><a class="button" href="https://furniturebanks.org/sroi-calculator-furniture-bank/" target="_blank" rel="noopener">Open the Calculator ↗</a><a href="#sroi-explained" data-smooth-scroll="">How it works ↓</a></div><section class="sroi-explanation" id="sroi-explained"><h2>What is SROI?</h2><p>The SROI ratio compares estimated social value with the resources invested. In the demo shown here, each $1 invested is forecast to create $6.49 of social value.</p><p>That figure is a modelled forecast based on the inputs and assumptions. It is not evidence that those outcomes have already happened.</p></section></div><figure class="forecast-export"><a href="assets/sroi-demo-forecast.pdf" target="_blank" rel="noopener" aria-label="Open the demo forecast PDF"><img src="images/sroi-demo-forecast.png" width="1391" height="1800" alt="Sample Furniture Bank demo PDF export: a 6.49 to 1 forecast, with the input values, stakeholder breakdown and limitations" fetchpriority="high"></a><figcaption><strong>Demo Forecast · PDF Export</strong></figcaption><a class="export-link" href="assets/sroi-demo-forecast.pdf" target="_blank" rel="noopener">View the full PDF ↗</a></figure></div>
+<section class="row"><h2>The Furniture Bank Model</h2><div><p>The model estimates outcomes for furniture recipients, donors, referring agencies and the environment. It combines activity counts with financial values for those outcomes, then adjusts for what might have happened anyway, other contributors and how long the effects last. The resulting value is compared with operating costs, donated furniture and volunteer time.</p><p>The calculator applies Furniture Bank Toronto’s model to an organization’s own inputs. Its result is a forecast based on that model, not a measurement of impact already achieved.</p><a href="https://furniturebanks.org/impact-measurement-resources-furniture-banks/" target="_blank" rel="noopener">Read the Furniture Bank Network Resource ↗</a></div></section>
+<section class="row"><h2>What I Built</h2><div><p>I translated the model into a working web tool, implementing the calculations, input validation and result explanations for Canadian and U.S. analyses.</p><p>I designed the PDF export to bring the forecast, stakeholder breakdown, inputs and limitations into a clear, shareable document.</p><p>Behind the interface, I built a Cloud Run endpoint to validate and store submissions in BigQuery, with separate handling for test data and production reporting.</p></div></section><div class="link-row"><a class="button" href="https://furniturebanks.org/sroi-calculator-furniture-bank/" target="_blank" rel="noopener">Try the Calculator ↗</a><a href="reporting.html">Next: Furniture Bank Data Warehouse →</a></div><p class="case-photo-credit">Header photograph by Dariya Ostrovska.</p></div></main>
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
