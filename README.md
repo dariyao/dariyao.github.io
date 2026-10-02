@@ -1,6 +1,6 @@
 # Portfolio V2
 
-Dariya Ostrovska’s portfolio: analytics projects, music journalism, profile writing, and résumé.
+Dariya Ostrovska’s portfolio: analytics projects, music journalism, and résumé.
 
 ## Pages
 
@@ -9,7 +9,6 @@ Dariya Ostrovska’s portfolio: analytics projects, music journalism, profile wr
 - `docs/reporting.html`: Furniture Bank Analytics, with interactive departmental dashboard previews
 - `docs/music.html`: Music Journalism
 - `docs/warfield.html`: Full Justin Warfield interview
-- `docs/profiles.html`: Profile Writing
 - `docs/about.html`: About, contact, and public résumé
 
 Dashboard previews use invented demonstration data. They do not contain Furniture Bank’s internal results.

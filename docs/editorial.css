@@ -290,37 +290,6 @@ main{scroll-margin-top:100px}
 .exec-stage #exec-sales .exec-cohort small{font-size:15px}
 .exec-stage #exec-sales .exec-cohort>div{padding:12px 20px}
 
-/* Profile Writing: a restrained editorial spread with a numbered reading rhythm. */
-.profile-editorial{padding-top:104px}
-.writing-nav{display:flex;gap:26px;margin-bottom:48px;font-size:14px}
-.writing-nav a{text-decoration:none;padding:8px 0;color:#64705f}
-.writing-nav a[aria-current=page]{border-bottom:1px solid #476343;color:var(--ink)}
-.profile-opening{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:clamp(40px,6vw,88px);align-items:center;margin-bottom:52px}
-.profile-opening .intro{padding:0}
-.profile-editorial h1{font-size:clamp(58px,6.5vw,86px);line-height:1.02;margin:22px 0 28px;letter-spacing:-.025em}
-.profile-editorial h1 em{font-weight:400;color:#4c614b}
-.profile-opening .lead{font-size:20px;line-height:1.65}
-.profile-opening .intro>p:last-child{font-size:16px;line-height:1.7;margin-bottom:0}
-.editor-lens{position:relative;background:#eeede3;border:1px solid #dddcd0;border-radius:5px;padding:32px 36px;box-shadow:0 12px 32px rgba(39,49,31,.045);transform:rotate(1.3deg)}
-.editor-lens:before{content:'';position:absolute;left:20px;top:24px;bottom:24px;border-left:1px solid #cfd4c2}
-.editorial .editor-lens .eyebrow{font-size:10px;margin-bottom:25px;letter-spacing:.15em}
-.editorial .editor-lens .lens-line{font:400 31px/1.18 'Cormorant',serif;color:#273929;margin-bottom:20px}
-.lens-line em{color:#697c5b;font-weight:400}
-.editorial .editor-lens .lens-note{font-size:11px;line-height:1.6;border-top:1px solid #cdd4c4;padding-top:16px;margin:24px 0 0;color:#687362}
-.profile-guide{display:grid;grid-template-columns:240px minmax(0,1fr);gap:56px;border-top:1px solid #cdd4c5;padding-top:38px}
-.profile-guide-heading{padding-top:12px}
-.editorial .profile-guide-note{font:400 27px/1.35 'Cormorant',serif;max-width:none;color:#64735d}
-.profile-steps .profile-step{display:grid;grid-template-columns:42px minmax(0,1fr);gap:22px;padding:30px 0;border-top:1px solid #d8dcd2}
-.profile-steps .profile-step:first-child{border-top:0;padding-top:10px}
-.step-number{font:italic 400 26px/1.2 'Cormorant',serif;color:#8c9a80;padding-top:4px}
-.profile-editorial .profile-step h2{font-size:34px;margin-bottom:14px;line-height:1.15}
-.profile-editorial .profile-step p{font-size:17px;line-height:1.75;margin:0;max-width:60ch}
-.profile-ending{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px 40px;border-top:1px solid #cdd4c5;padding-top:34px;margin-top:24px}
-.editorial .profile-ending>p{font:400 35px/1.15 'Cormorant',serif;color:var(--ink);margin:0}
-.profile-ending em{color:#65795c}
-.profile-ending .link-row{margin:0;font-size:14px;gap:26px}
-@media(max-width:760px){.profile-editorial{padding-top:132px}.writing-nav{margin-bottom:30px}.profile-opening{grid-template-columns:1fr;gap:32px;margin-bottom:38px}.profile-editorial h1{font-size:60px}.editor-lens{max-width:400px;padding:26px 34px;transform:none}.editorial .editor-lens .lens-line{font-size:28px}.profile-guide{grid-template-columns:1fr;gap:12px}.profile-guide-heading{padding:0}.editorial .profile-guide-note{font-size:24px;max-width:none}.profile-steps .profile-step{gap:12px;grid-template-columns:30px 1fr}.profile-editorial .profile-step h2{font-size:30px}.profile-ending{align-items:start}.profile-ending .link-row{gap:18px}}
-
 /* Approved personal photograph for the public calculator case study. */
 .sroi-hero .scene img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 35%}
 .editorial .case-photo-credit{margin:48px 0 0;padding-top:20px;border-top:1px solid #d8dcd2;font-size:12px;color:var(--muted)}
